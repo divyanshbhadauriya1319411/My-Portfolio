@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaEnvelope,
   FaMapMarkerAlt,
@@ -8,6 +8,8 @@ import {
   FaCheckCircle,
   FaPhoneAlt,
   FaPaperPlane,
+  FaSpinner,
+  FaExclamationCircle,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
@@ -16,19 +18,73 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState({ show: false, type: "", message: "" });
 
-  const handleSubmit = (e) => {
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
+  const showToast = (type, message) => {
+    setToast({ show: true, type, message });
+    setTimeout(() => {
+      setToast({ show: false, type: "", message: "" });
+    }, 6000);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setToast({ show: false, type: "", message: "" });
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", subject: "", message: "" });
+        showToast("success", data.message || "Your message has been sent successfully.");
+      } else {
+        showToast("error", data.message || "Unable to send message. Please verify your inputs.");
+      }
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+      showToast("error", "Unable to connect to server. Please verify your internet connection or try again later.");
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-      setForm({ name: "", email: "", subject: "", message: "" });
-    }, 800);
+    }
   };
 
   return (
     <div className="pt-28 pb-28 px-6 max-w-6xl mx-auto space-y-20 transition-colors duration-500">
+      {/* Toast Notification Banner */}
+      <AnimatePresence>
+        {toast.show && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className={`fixed top-24 right-6 z-50 max-w-md p-4 rounded-2xl shadow-2xl border flex items-center gap-3 backdrop-blur-md ${
+              toast.type === "success"
+                ? "bg-emerald-500/90 border-emerald-400 text-white shadow-emerald-500/25"
+                : "bg-red-500/90 border-red-400 text-white shadow-red-500/25"
+            }`}
+          >
+            {toast.type === "success" ? (
+              <FaCheckCircle className="shrink-0 text-xl" />
+            ) : (
+              <FaExclamationCircle className="shrink-0 text-xl" />
+            )}
+            <p className="text-sm font-bold leading-snug">{toast.message}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Header */}
       <div className="space-y-3 sm:space-y-4 max-w-3xl">
         <h1 className="text-clamp-hero font-extrabold font-heading tracking-tight text-primary break-words transition-colors">
@@ -162,7 +218,10 @@ export default function Contact() {
                 {t("contact.successDesc")}
               </p>
               <button
-                onClick={() => setSubmitted(false)}
+                onClick={() => {
+                  setSubmitted(false);
+                  setToast({ show: false, type: "", message: "" });
+                }}
                 className="mt-3 text-xs font-extrabold underline hover:opacity-80 interactive-btn"
               >
                 {t("contact.sendAnother")}
@@ -252,10 +311,19 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] text-white font-extrabold text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/45 hover:-translate-y-0.5 disabled:opacity-50 transition-all duration-200 interactive-btn touch-target"
+                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] text-white font-extrabold text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/45 hover:-translate-y-0.5 disabled:opacity-50 transition-all duration-200 interactive-btn touch-target cursor-pointer disabled:cursor-not-allowed"
               >
-                <FaPaperPlane size={13} className="transition-transform duration-200 group-hover:translate-x-1" />
-                <span>{loading ? t("contact.sending") : t("contact.sendBtn")}</span>
+                {loading ? (
+                  <>
+                    <FaSpinner size={14} className="animate-spin" />
+                    <span>{t("contact.sending")}</span>
+                  </>
+                ) : (
+                  <>
+                    <FaPaperPlane size={13} className="transition-transform duration-200 group-hover:translate-x-1" />
+                    <span>{t("contact.sendBtn")}</span>
+                  </>
+                )}
               </button>
             </form>
           )}

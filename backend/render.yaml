@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: portfolio-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: RESEND_API_KEY
+        sync: false
+      - key: FROM_EMAIL
+        sync: false
+      - key: TO_EMAIL
+        sync: false
+      - key: RECAPTCHA_SECRET_KEY
+        sync: false
+      - key: RECAPTCHA_MIN_SCORE
+        value: "0.5"
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:5173,https://YOUR-VERCEL-DOMAIN.vercel.app
+      - key: ENVIRONMENT
+        value: production
