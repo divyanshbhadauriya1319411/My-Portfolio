@@ -1,0 +1,681 @@
+{
+  "theme": {
+    "toggle": "Toggle theme"
+  },
+  "langSwitcher": {
+    "selectLanguage": "Select Language",
+    "changeLanguage": "Change Language",
+    "close": "Close language selector",
+    "mobileTitle": "Select Language / भाषा चुनें"
+  },
+  "navbar": {
+    "brandSubtitle": "Software Engineer",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "resume": "Resume",
+    "contact": "Contact",
+    "hireMe": "Hire Me",
+    "hireMeNow": "Hire Me Now",
+    "downloadResumePdf": "Download Resume PDF",
+    "navigationMenu": "Navigation Menu",
+    "openMenu": "Open Navigation Menu",
+    "closeMenu": "Close menu"
+  },
+  "home": {
+    "badge": "👋 Available for Full-Time Opportunities",
+    "greeting": "Hi, I'm",
+    "name": "Divyansh Bhadauriya",
+    "roles": [
+      "Python Developer",
+      "Backend Engineer",
+      "Django Developer",
+      "Full Stack Developer"
+    ],
+    "introduction": "I build scalable backend architectures, high-throughput RESTful APIs, and responsive full-stack applications with Python, Django, PostgreSQL, and React 19. Passionate about clean code, low latency, and engineering exceptional product experiences.",
+    "viewProjects": "View Projects",
+    "downloadResume": "Download Resume",
+    "contactMe": "Contact Me",
+    "connectLabel": "Connect :",
+    "location": "Delhi, India",
+    "degreeExp": "BCA · 1+ Yrs Exp",
+    "statusBadge": "Available for Hire",
+    "scrollToExplore": "Scroll to Explore",
+    "targetStandardsTitle": "Target Engineering Standards",
+    "targetStandardsDesc": "Prepared for high-impact software roles at leading tech organizations.",
+    "primaryTechTitle": "Primary Technologies",
+    "primaryTechDesc": "Production-grade languages, backend frameworks, and relational databases.",
+    "seeAllSkills": "See All 20+ Skills",
+    "engValueTitle": "Engineering Value Added",
+    "engValueDesc": "Combining robust backend fundamentals with product-oriented frontend delivery.",
+    "whyHireMe": [
+      {
+        "title": "Scalable Backend Systems",
+        "description": "Expertise architecting modular Python & Django REST Framework backends optimized for clean data flow, low query latency, and high resilience."
+      },
+      {
+        "title": "Modern Frontend Delivery",
+        "description": "Crafting responsive, zero-layout-shift single-page applications utilizing React 19, Tailwind CSS, and buttery GSAP/Framer Motion animations."
+      },
+      {
+        "title": "Database Modeling & Security",
+        "description": "Proficient in PostgreSQL schema modeling, relational indexing, query optimization, and secure industry authentication standards (JWT, OAuth)."
+      }
+    ],
+    "featuredCaseStudiesTitle": "Featured Case Studies",
+    "featuredCaseStudiesDesc": "Select technical implementations architected from ground up.",
+    "allRepositories": "All Repositories",
+    "backgroundHighlightsTitle": "Background Highlights",
+    "backgroundHighlightsDesc": "Academic grounding coupled with hands-on commercial web platform delivery.",
+    "seeFullTimeline": "See Full Timeline",
+    "eduHighlightLabel": "Education · 2023 – Present",
+    "eduHighlightTitle": "Bachelor of Computer Applications (BCA)",
+    "eduHighlightDesc": "Dr. Bhim Rao Ambedkar University, Agra. Focused on core computer science concepts, RDBMS database management, object-oriented programming paradigms in Python/C++, and networking principles.",
+    "commHighlightLabel": "Commercial Delivery · 2024 – Present",
+    "commHighlightTitle": "Full Stack & Django Engineer",
+    "commHighlightDesc": "Architected and deployed full-stack systems including RAMA INTERNATIONAL and Rent-Drive using Django REST Framework, relational PostgreSQL models, and responsive React single-page interfaces.",
+    "ctaBannerTitle": "Ready to Build Impactful Software?",
+    "ctaBannerDesc": "Looking for a dedicated backend engineer or full stack developer for your core team? Let's discuss how my expertise in Python and React can accelerate your delivery.",
+    "getInTouchToday": "Get in Touch Today"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Full Stack Developer passionate about backend architecture, relational databases, and high-performance React web interfaces.",
+    "roleTag": "Python & Django Developer · Full Stack Engineer",
+    "openToWork": "Open to Work",
+    "resumePdf": "Resume PDF",
+    "badge": "ABOUT ME",
+    "heading": "Building Scalable Software That Solves Real Problems",
+    "description": "I'm a Full Stack Developer specializing in Python, Django REST Framework, React, PostgreSQL, and modern backend architecture. I enjoy building scalable APIs, responsive web applications, and clean user experiences with production-ready code.",
+    "statusAvailable": "Available for Full-Time",
+    "techBadge": "Python Developer",
+    "locationBadge": "Delhi, India",
+    "stats": {
+      "projects": "Projects Completed",
+      "technologies": "Technologies",
+      "repos": "GitHub Repositories",
+      "experience": "Learning Experience",
+      "projectsVal": "10+",
+      "technologiesVal": "12+",
+      "reposVal": "20+",
+      "experienceVal": "2+ Years"
+    },
+    "coreTechTitle": "Core Technologies",
+    "journeyTitle": "Engineering Journey",
+    "journeySubtitle": "From core programming foundations to architecting production full-stack systems.",
+    "timelineItems": [
+      {
+        "icon": "Started Programming",
+        "title": "Started Programming",
+        "description": "Mastered core C/C++ & Python programming fundamentals, data structures, algorithmic problem solving, and Linux command-line workflows.",
+        "year": "2023"
+      },
+      {
+        "icon": "Learned Python & SQL",
+        "title": "Learned Python & SQL",
+        "description": "Deep dived into object-oriented Python architecture, relational database design, complex SQL queries, and normalization techniques.",
+        "year": "2023"
+      },
+      {
+        "icon": "Built Full Stack Projects",
+        "title": "Built Full Stack Projects",
+        "description": "Architected decoupled RESTful APIs using Django REST Framework, JWT authentication, and dynamic React single-page interfaces.",
+        "year": "2024"
+      },
+      {
+        "icon": "Building Production Applications",
+        "title": "Building Production Applications",
+        "description": "Delivered commercial platforms including RAMA INTERNATIONAL and Rent-Drive with PostgreSQL indexing and enterprise cloud deployments.",
+        "year": "2024 – Present"
+      },
+      {
+        "icon": "Looking for Software Engineer Opportunities",
+        "title": "Looking for Software Engineer Opportunities",
+        "description": "Actively seeking full-time backend, full stack, or Python developer roles in high-impact engineering organizations and MNCs.",
+        "year": "Now"
+      }
+    ],
+    "downloadResume": "Download Resume",
+    "letsConnect": "Let's Connect",
+    "bioParagraphs": [
+      "Hello! I am Divyansh Bhadauriya, a dedicated Full Stack Developer specializing in Python, Django REST Framework, and React 19. Currently pursuing my Bachelor of Computer Applications (BCA), I combine formal computer science principles with rigorous real-world engineering practice.",
+      "My core engineering focus centers on backend architectures and clean data modeling. I thrive on structuring relational PostgreSQL schemas, optimizing database query pipelines, and exposing secure, decoupled RESTful APIs using Django REST Framework and JWT authentication.",
+      "On the frontend, I deliver responsive, highly polished user interfaces utilizing React 19 and Tailwind CSS v4. I believe that an exceptional software product requires both a rock-solid, scalable backend and an intuitive, zero-bloat user interface.",
+      "Whether working independently or within cross-functional engineering teams, my standard is clean code, thorough documentation, and reliable production benchmarks."
+    ],
+    "letsConnectBtn": "Let's Connect & Discuss Roles",
+    "quickFactsTitle": "Quick Facts & Summary",
+    "quickFacts": [
+      {
+        "label": "Base Location",
+        "value": "Delhi NCR / Agra, India",
+        "subtitle": "Open to Remote Worldwide"
+      },
+      {
+        "label": "Professional Experience",
+        "value": "1+ Years Practical",
+        "subtitle": "Independent & Commercial Projects"
+      },
+      {
+        "label": "Undergraduate Degree",
+        "value": "Bachelor of Computer Applications",
+        "subtitle": "Dr. Bhim Rao Ambedkar University"
+      },
+      {
+        "label": "Languages Spoken",
+        "value": "English & Hindi",
+        "subtitle": "Professional Working Proficiency"
+      }
+    ],
+    "milestonesTitle": "Career Milestones & Academic Journey",
+    "milestones": [
+      {
+        "year": "2024 – Present",
+        "company": "Commercial Delivery & Independent Systems",
+        "title": "Full Stack & Django Backend Engineering",
+        "description": "Architected and deployed enterprise-level platforms including RAMA INTERNATIONAL and Rent-Drive. Designed modular REST APIs using Django REST Framework, implemented PostgreSQL relational models with strict indexing, and built responsive React single-page interfaces."
+      },
+      {
+        "year": "2023 – Present",
+        "company": "Dr. Bhim Rao Ambedkar University, Agra",
+        "title": "Bachelor of Computer Applications (BCA)",
+        "description": "Pursuing formal undergraduate degree with coursework focusing on relational database management systems (RDBMS), object-oriented programming paradigms in C/C++/Python, Linux operating systems, and computer networks."
+      },
+      {
+        "year": "2023",
+        "company": "Self-Directed Technical Immersion",
+        "title": "Foundations of Web & Backend Development",
+        "description": "Mastered core programming fundamentals, Linux command-line workflows, Git branching strategies, and responsive frontend styling with modern CSS utilities."
+      }
+    ]
+  },
+  "skills": {
+    "badge": "TECH STACK",
+    "title": "Skills & Technologies",
+    "description": "I build scalable backend systems, modern web applications, secure REST APIs, and responsive user interfaces using production-ready technologies.",
+    "checklist": [
+      "12+ Technologies",
+      "Backend Specialist",
+      "REST API Development",
+      "SQL & PostgreSQL",
+      "React Frontend",
+      "Deployment & Git"
+    ],
+    "downloadResume": "Download Resume",
+    "categories": {
+      "Backend": {
+        "title": "Backend Engineering",
+        "description": "Robust server-side architectures, RESTful API design, background workers, and secure token authentication.",
+        "level": "Backend Specialist",
+        "experience": "2+ Years"
+      },
+      "Languages": {
+        "title": "Programming Languages",
+        "description": "Core programming foundations for system architecture, data structures, and web interface development.",
+        "level": "Core Expertise",
+        "experience": "2+ Years"
+      },
+      "Frontend": {
+        "title": "Frontend Development",
+        "description": "Responsive, zero-bloat single-page applications with smooth state management and dynamic UI animations.",
+        "level": "Production Ready",
+        "experience": "2+ Years"
+      },
+      "Database": {
+        "title": "Database Systems",
+        "description": "Relational data modeling, schema optimization, complex query execution, and high-performance indexing.",
+        "level": "RDBMS Specialist",
+        "experience": "2+ Years"
+      },
+      "Tools": {
+        "title": "Developer Tools & Cloud",
+        "description": "Version control workflows, API debugging suites, containerization, and automated cloud deployments.",
+        "level": "Workflow & Cloud",
+        "experience": "2+ Years"
+      },
+      "SoftSkills": {
+        "title": "Soft Skills & Leadership",
+        "description": "Cross-functional communication, agile collaboration, rapid debugging, and analytical problem solving.",
+        "level": "Continuous Growth",
+        "experience": "Continuous"
+      }
+    },
+    "items": {
+      "Python": { "name": "Python", "experience": "2+ Years" },
+      "Django": { "name": "Django", "experience": "2+ Years" },
+      "Django REST Framework": { "name": "Django REST Framework", "experience": "2+ Years" },
+      "JWT Authentication": { "name": "JWT Authentication", "experience": "1.5+ Years" },
+      "REST APIs": { "name": "REST APIs", "experience": "2+ Years" },
+      "Celery": { "name": "Celery", "experience": "Expanding" },
+      "Swagger": { "name": "Swagger / OpenAPI", "experience": "2+ Years" },
+      "Docker": { "name": "Docker", "experience": "Expanding" },
+      "JavaScript": { "name": "JavaScript (ES6+)", "experience": "2+ Years" },
+      "SQL": { "name": "SQL", "experience": "2+ Years" },
+      "HTML": { "name": "HTML5", "experience": "3+ Years" },
+      "CSS": { "name": "CSS3", "experience": "3+ Years" },
+      "React": { "name": "React 19", "experience": "2+ Years" },
+      "Tailwind CSS": { "name": "Tailwind CSS v4", "experience": "2+ Years" },
+      "Bootstrap": { "name": "Bootstrap", "experience": "2+ Years" },
+      "Framer Motion": { "name": "Framer Motion & GSAP", "experience": "1.5+ Years" },
+      "Responsive Design": { "name": "Responsive Design", "experience": "3+ Years" },
+      "PostgreSQL": { "name": "PostgreSQL", "experience": "2+ Years" },
+      "MySQL": { "name": "MySQL", "experience": "2+ Years" },
+      "SQLite": { "name": "SQLite", "experience": "2+ Years" },
+      "SQL Optimization": { "name": "Query Optimization & Indexing", "experience": "1.5+ Years" },
+      "Git": { "name": "Git", "experience": "2+ Years" },
+      "GitHub": { "name": "GitHub Workflows", "experience": "2+ Years" },
+      "VS Code": { "name": "VS Code / IDEs", "experience": "3+ Years" },
+      "Postman": { "name": "Postman & API Suites", "experience": "2+ Years" },
+      "Render": { "name": "Render Cloud", "experience": "2+ Years" },
+      "Vercel": { "name": "Vercel", "experience": "2+ Years" },
+      "Problem Solving": { "name": "Problem Solving", "experience": "Continuous" },
+      "Communication": { "name": "Communication", "experience": "Continuous" },
+      "Leadership": { "name": "Technical Leadership", "experience": "Continuous" },
+      "Debugging": { "name": "Rapid Debugging", "experience": "Continuous" },
+      "Team Collaboration": { "name": "Team Collaboration", "experience": "2+ Years" },
+      "Time Management": { "name": "Time Management", "experience": "Continuous" },
+      "Quick Learning": { "name": "Quick Learning", "experience": "Continuous" }
+    }
+  },
+  "projects": {
+    "title": "Projects & Codebase",
+    "selectedWork": "Selected Projects",
+    "selectedSubtitle": "Production-ready applications showcasing full-stack development, backend engineering and modern UI.",
+    "subtitle": "Explore complete production systems, full stack commercial platforms, and backend REST API suites verified directly via public GitHub repositories.",
+    "categories": {
+      "All": "All",
+      "Full Stack": "Full Stack",
+      "Backend": "Backend",
+      "Frontend": "Frontend",
+      "React": "React",
+      "Python": "Python",
+      "Django": "Django",
+      "JavaScript": "JavaScript"
+    },
+    "stats": {
+      "repositories": "Repositories",
+      "projectsCompleted": "Projects Completed",
+      "technologiesUsed": "Technologies Used",
+      "githubCommits": "GitHub Commits",
+      "yearsLearning": "Years Practical"
+    },
+    "githubSection": {
+      "title": "Live GitHub Activity & Codebase Ecosystem",
+      "subtitle": "Real-time contribution analytics, repository metrics, and primary language distribution fetched directly via GitHub API.",
+      "latestRepos": "Live GitHub Repositories",
+      "viewGitHub": "View on GitHub →",
+      "followers": "Followers",
+      "following": "Following",
+      "publicRepos": "Public Repos",
+      "languagesTitle": "Primary Languages & Tech Stack",
+      "commitsGridTitle": "Contribution Activity & Engineering Cadence"
+    },
+    "caseStudy": {
+      "overview": "Executive Overview",
+      "problem": "Problem & Business Challenge",
+      "solution": "Technical Solution & Architecture",
+      "features": "Key Features & Capabilities",
+      "databaseDesign": "Database Design & Relational Modeling",
+      "apiFlow": "API Flow & Security Architecture",
+      "challenges": "Engineering Challenges Overcome",
+      "results": "Measurable Results & Impact",
+      "nextProject": "Next Case Study",
+      "backToProjects": "← Back to All Case Studies",
+      "highlightsTitle": "Key Highlights",
+      "role": "Role",
+      "duration": "Duration"
+    },
+    "searchPlaceholder": "Search by project name, tech stack, description...",
+    "featuredBadge": "Featured",
+    "readCaseStudy": "Read Case Study →",
+    "noMatch": "No projects matching \"{{query}}\". Try selecting another filter or search term.",
+    "caseStudySuffix": "Architecture Case Study",
+    "techUsed": "Technology & Libraries Utilized",
+    "viewRepo": "View GitHub Repository",
+    "liveDemo": "Live Demo Portal",
+    "sourceCode": "Source Code",
+    "keyFeatures": "Key Features & Capabilities",
+    "architectureHeading": "Architecture & Challenges Solved",
+    "data": {
+      "rama-international": {
+        "title": "RAMA INTERNATIONAL Platform",
+        "category": "Full Stack",
+        "oneLineDesc": "Enterprise recruitment & trading catalog platform with Django REST backend and React 19 UI.",
+        "role": "Full Stack Architect",
+        "duration": "3 Months",
+        "highlights": [
+          "Authentication",
+          "Recruiter Dashboard",
+          "Candidate Routing",
+          "Responsive UI",
+          "PostgreSQL Indexing",
+          "Django REST API"
+        ],
+        "description": "A full-stack recruitment and commercial catalog platform engineered using React 19, Django REST Framework, and PostgreSQL featuring secure authentication, dynamic lead routing, and instant filtering.",
+        "longDescription": "RAMA INTERNATIONAL is an enterprise-grade web application designed to streamline product exploration and client inquiry handling. Built using Django for robust backend ORM management, role authorization, and secure REST endpoints, alongside React 19 and Tailwind CSS for an instant, responsive interface across global devices.",
+        "overview": "RAMA INTERNATIONAL required a high-performance digital platform capable of handling real-time product discovery and structured client inquiries without latency spikes.",
+        "problem": "Traditional export inquiry workflows relied on disjointed email chains and manual data entry, leading to delayed response times and unorganized candidate/lead routing.",
+        "solution": "Built a centralized Django REST Framework backend with clean serializer validation and role-based permissions, paired with a React single-page interface with zero layout shift.",
+        "dbDesign": "Relational PostgreSQL database schema utilizing indexed foreign keys between categories, product items, and user inquiry models, achieving sub-50ms query response times.",
+        "apiFlow": "Secured via stateless JWT token authentication with automated token refreshing and strict rate-limiting policies on sensitive lead generation endpoints.",
+        "challenges": "Optimizing complex multi-table JOINs for dynamic filtering across thousands of catalog items while maintaining instantaneous frontend state synchronization.",
+        "results": "Reduced inquiry processing turnaround by 65% and delivered a 100/100 Lighthouse accessibility and performance UX."
+      },
+      "rent-drive": {
+        "title": "Rent-Drive Vehicle Portal",
+        "category": "Full Stack",
+        "oneLineDesc": "End-to-end vehicle reservation portal with PostgreSQL relational validation and React UI.",
+        "role": "Full Stack Engineer",
+        "duration": "2 Months",
+        "highlights": [
+          "Reservation Engine",
+          "Availability Check",
+          "Pricing Algorithms",
+          "Token Auth",
+          "Relational Schema",
+          "Admin Controls"
+        ],
+        "description": "End-to-end vehicle reservation and rental management portal complete with multi-state availability validation, pricing algorithms, and administrative dashboard controls.",
+        "longDescription": "Rent-Drive solves real-time reservation concurrency through relational database modeling in PostgreSQL, custom Django serializers, and clean token-based authentication. The React interface provides seamless vehicle discovery with zero layout shifts.",
+        "overview": "Rent-Drive is a dedicated vehicle rental platform engineered to prevent double-booking anomalies and provide seamless multi-date reservation pricing.",
+        "problem": "Concurrency challenges in high-demand vehicle reservation systems often cause overlapping bookings when multiple users attempt to reserve the same vehicle simultaneously.",
+        "solution": "Implemented PostgreSQL transaction isolation and database-level constraint locking inside Django ORM serializers to guarantee strict transactional integrity.",
+        "dbDesign": "Normalized PostgreSQL tables separating Vehicle instances, Booking intervals, and User profiles with compound indexing on start/end dates.",
+        "apiFlow": "RESTful JSON endpoints documented with clear status codes (`201 Created`, `409 Conflict`) and token-authenticated user management.",
+        "challenges": "Managing accurate timezone-aware booking intervals across diverse geographic locations without client-side calculation errors.",
+        "results": "Achieved zero booking conflicts under concurrent load testing and smooth 60fps UI discovery."
+      },
+      "storesaga": {
+        "title": "StoreSaga E-Commerce Ecosystem",
+        "category": "Full Stack",
+        "oneLineDesc": "Modern shopping ecosystem featuring dynamic cart management, instant search, and REST API.",
+        "role": "Full Stack Developer",
+        "duration": "2 Months",
+        "highlights": [
+          "Dynamic Cart",
+          "Instant Search",
+          "REST Integration",
+          "Responsive Grid",
+          "State Management",
+          "Secure Checkout"
+        ],
+        "description": "A feature-rich e-commerce web platform offering responsive catalog navigation, instantaneous cart calculations, and modular frontend state management.",
+        "longDescription": "StoreSaga showcases clean frontend component separation and fast RESTful API data hydration. Designed with responsive product cards, real-time cart drawer updates, and optimized bundle delivery.",
+        "overview": "StoreSaga was developed to demonstrate modern retail UX patterns including instant filtering, persisted shopping carts, and seamless checkout flows.",
+        "problem": "Many e-commerce templates suffer from heavy JavaScript bloat and slow product grid rendering during category switching.",
+        "solution": "Created a lightweight, modular React architecture utilizing custom hooks for state persistence and debounced search filtering.",
+        "dbDesign": "Structured relational JSON schema modeling products, variant options, pricing tiers, and order history.",
+        "apiFlow": "Optimized REST API fetching with local cache invalidation to minimize redundant network calls.",
+        "challenges": "Maintaining synchronized cart totals across browser tabs while keeping component re-renders to an absolute minimum.",
+        "results": "Delivered sub-100ms category switching and clean modular code maintainability."
+      },
+      "portfolio-architecture": {
+        "title": "MNC-Grade Portfolio Architecture",
+        "category": "Frontend",
+        "oneLineDesc": "Senior software engineering showcase designed with Apple, Stripe, and Vercel aesthetics.",
+        "role": "Senior Frontend Engineer",
+        "duration": "Continuous",
+        "highlights": [
+          "Lenis Smooth Scroll",
+          "GSAP 3D Tilt",
+          "Custom Cursor",
+          "Bilingual i18n",
+          "Apple Aesthetics",
+          "Zero Layout Shift"
+        ],
+        "description": "Senior software engineering showcase designed with Apple, Linear, and Vercel aesthetics. Features Lenis smooth scrolling, GSAP 3D tilt, and custom interactive cursor.",
+        "longDescription": "Built with React 19, Vite, and Tailwind CSS v4. Incorporates custom exponential decay momentum scrolling via Lenis, dual-layer interactive cursor with spring tracking, and zero-bloat modular component architecture.",
+        "overview": "A production-grade developer showcase crafted to exceed the visual and architectural standards of global MNC recruiting teams.",
+        "problem": "Traditional developer portfolios often rely on generic Bootstrap/Tailwind templates with clunky animations and poor mobile touch ergonomics.",
+        "solution": "Engineered a bespoke system combining Lenis inertia scrolling, GSAP 3D perspective physics, and React Portals for bilingual language switching.",
+        "dbDesign": "Static JSON dictionary structure (`react-i18next`) allowing instant zero-latency localization across English and Hindi.",
+        "apiFlow": "Dynamic GitHub API integration fetching live repository metrics, commit statistics, and profile details in real time.",
+        "challenges": "Ensuring fluid 60fps animations and custom 3D card tilts across both high-end desktop monitors and mobile touch screens without memory leaks.",
+        "results": "Achieved a stunning, highly polished Apple/Vercel visual aesthetic verified by zero build errors and rapid compilation."
+      },
+      "django-enterprise-api": {
+        "title": "Enterprise Backend REST API Suite",
+        "category": "Backend",
+        "oneLineDesc": "High-throughput Django REST API suite with JWT auth and Swagger docs.",
+        "role": "Backend Architect",
+        "duration": "2 Months",
+        "highlights": [
+          "JWT Authentication",
+          "Connection Pooling",
+          "Rate Limiting",
+          "Swagger Docs",
+          "Test Suite",
+          "Schema Isolation"
+        ],
+        "description": "Standalone high-throughput API service suite featuring JWT authentication, automated test suites, rate-limiting, query optimization, and structured Swagger documentation.",
+        "longDescription": "Designed specifically for high-load backend architecture testing. Demonstrates strict serializer validation, PostgreSQL connection pooling recommendations, pagination rules, and multi-tenant schema isolation.",
+        "overview": "A dedicated backend API suite built to simulate high-load enterprise microservice communication and strict payload validation.",
+        "problem": "Unoptimized backend APIs often suffer from N+1 database queries and insecure token expiration handling under concurrent requests.",
+        "solution": "Implemented `select_related` / `prefetch_related` queryset optimizations along with comprehensive Swagger/OpenAPI documentation and automated Pytest suites.",
+        "dbDesign": "Multi-tenant schema design with isolated tables and strict indexing on foreign key lookups.",
+        "apiFlow": "Secured endpoints utilizing JWT token validation, role-based access control (RBAC), and custom throttling classes.",
+        "challenges": "Balancing comprehensive payload validation with minimal CPU overhead during serialization.",
+        "results": "Eliminated N+1 query bottlenecks and produced production-ready interactive API documentation."
+      }
+    }
+  },
+  "experience": {
+    "badge": "💼 PROFESSIONAL JOURNEY",
+    "title": "Experience",
+    "subtitle": "Building production-ready applications, backend systems and modern web experiences through continuous learning and real-world projects.",
+    "keyAchievements": "Key Achievements",
+    "techStack": "Tech Stack",
+    "timeline": [
+      {
+        "role": "Backend Developer",
+        "company": "RAMA INTERNATIONAL",
+        "duration": "2025 – Present",
+        "location": "Commercial Delivery & Remote",
+        "status": "🟢 Current",
+        "description": "Designed and developed scalable recruitment and trading platforms using Django REST Framework, PostgreSQL and React. Focused on authentication, API optimization, deployment and production-ready architecture.",
+        "achievements": [
+          "Built JWT Authentication",
+          "Developed REST APIs",
+          "PostgreSQL Database Design",
+          "Optimized Backend Performance",
+          "Responsive React Frontend"
+        ],
+        "tech": ["Python", "Django", "DRF", "React", "PostgreSQL", "JWT", "Docker", "Git"]
+      },
+      {
+        "role": "Freelance Web Developer",
+        "company": "Independent Clients & Self-Employed",
+        "duration": "2024 – Present",
+        "location": "Remote",
+        "status": "🟢 Current",
+        "description": "Built custom websites and backend systems for clients with responsive UI, secure APIs and deployment.",
+        "achievements": [
+          "Engineered custom client web portals",
+          "Designed secure RESTful API integrations",
+          "Deployed production apps to Render & Vercel"
+        ],
+        "tech": ["React", "Python", "Django", "REST API", "Tailwind CSS", "JavaScript", "PostgreSQL", "Git"]
+      },
+      {
+        "role": "BCA Student",
+        "company": "Dr. Bhim Rao Ambedkar University",
+        "duration": "2023 – Present",
+        "location": "Agra, India",
+        "status": "🎓 In Progress",
+        "description": "Relevant Coursework: Data Structures, DBMS, Operating Systems, Python, Web Development.",
+        "achievements": [
+          "Data Structures & Algorithms Mastery",
+          "Relational Database Systems (SQL/DBMS)",
+          "Operating Systems & Linux Environment",
+          "Object-Oriented Programming with Python"
+        ],
+        "tech": ["Python", "SQL", "Data Structures", "DBMS", "Operating Systems", "C/C++", "Git", "Linux"]
+      }
+    ],
+    "stats": {
+      "title": "Engineering Profile",
+      "projectsLabel": "Projects",
+      "projectsValue": "10+",
+      "reposLabel": "GitHub Repositories",
+      "reposValue": "20+",
+      "techLabel": "Technologies",
+      "techValue": "15+",
+      "focusLabel": "Current Focus",
+      "focusValue": "Backend Engineering",
+      "expLabel": "Experience",
+      "expValue": "2+ Years"
+    }
+  },
+  "resume": {
+    "title": "Curriculum Vitae",
+    "subtitle": "ATS-ready software engineering resume complete with interactive PDF preview and direct download options.",
+    "printCv": "Print CV",
+    "downloadPdf": "Download Resume PDF",
+    "eduSummaryTitle": "Education Summary",
+    "eduSummaryDegree": "Bachelor of Computer Applications (BCA)",
+    "eduSummaryInstitution": "Dr. Bhim Rao Ambedkar University, Agra · 2023 – Present",
+    "eduSummaryFocus": "Relational Database Systems (PostgreSQL/SQL), Object-Oriented Programming (Python/C++), Operating Systems, and Networking.",
+    "skillsSummaryTitle": "Skills Summary",
+    "skillsSummaryItems": [
+      "Python, Django, Django REST Framework, and secure RESTful API architectures.",
+      "PostgreSQL schema modeling, complex query optimization, and transaction management.",
+      "React 19, Tailwind CSS v4, GSAP/Framer Motion animations, and responsive UI delivery.",
+      "Git collaborative workflows, Docker containerization basics, and Linux server commands."
+    ],
+    "certSummaryTitle": "Certificates Summary",
+    "certSummaryItems": [
+      "Verified Full Stack Application Deployment — RAMA INTERNATIONAL & Rent-Drive repositories.",
+      "Relational Database & Query Optimization Mastery — PostgreSQL / SQL benchmarks.",
+      "Modern Frontend Component Engineering — React 19 & Tailwind CSS v4."
+    ],
+    "docPreviewTitle": "Document Preview — resume.pdf",
+    "a4Format": "A4 Standard Format",
+    "troubleText": "Having trouble viewing the PDF preview inside your browser window?",
+    "clickHere": "Click here to download the PDF document directly."
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Have a software engineering opportunity, freelance project, or technical question? Reach out via direct message or connect through professional channels.",
+    "availImmediately": "Available Immediately",
+    "openForRoles": "Open for Full-Time & Freelance Roles",
+    "availDesc": "Ready to integrate with remote engineering teams globally or on-site across India.",
+    "emailLabel": "Email Address",
+    "locationLabel": "Location",
+    "locationValue": "Delhi NCR / Agra, India",
+    "openToRemote": "Open to Worldwide Remote",
+    "phoneLabel": "Phone / Direct",
+    "phoneValue": "Available upon email request",
+    "profNetworks": "Professional Networks",
+    "githubProfile": "GitHub Profile",
+    "linkedinProfile": "LinkedIn Profile",
+    "formTitle": "Send a Direct Message",
+    "formSubtitle": "Your message will be sent straight to my priority inbox with guaranteed 24-hour response.",
+    "successTitle": "Message Sent Successfully!",
+    "successDesc": "Thank you for reaching out. I have received your inquiry and will reply directly to your email address within 24 hours.",
+    "sendAnother": "Send Another Message →",
+    "labelName": "Your Name *",
+    "labelEmail": "Email Address *",
+    "labelSubject": "Subject *",
+    "labelMessage": "Message Content *",
+    "sending": "Sending Message...",
+    "sendBtn": "Send Direct Message",
+    "baseLocTitle": "Base Location & Region"
+  },
+  "certificates": {
+    "title": "Roadmap & Competencies",
+    "subtitle": "Verified technical benchmarks and continuous learning roadmap. Each skill is demonstrated directly through commercial system delivery and public source repositories rather than simple online quiz certificates.",
+    "engStandard": "Engineering Standard",
+    "execBackedTitle": "Execution-Backed Verification",
+    "execBackedDesc": "In modern MNC hiring environments, working code speaks louder than digital certificates. Every core competency listed below is proven through live deployments and architectural case studies.",
+    "verifiedCount": "5 Verified Competencies",
+    "advancingCount": "2 Advancing Targets",
+    "tabs": {
+      "All": "All",
+      "Completed": "Completed",
+      "In Progress": "In Progress"
+    },
+    "evidenceLabel": "Evidence:",
+    "items": [
+      {
+        "title": "Python Advanced Architecture & RDBMS",
+        "category": "Core Engineering",
+        "status": "Completed",
+        "level": "Verified Proficiency",
+        "description": "Deep practical domain mastery across object-oriented design, multi-threading basics, decorators, and high-performance backend pipelines.",
+        "evidence": "RAMA INTERNATIONAL & Rent-Drive Production Backends"
+      },
+      {
+        "title": "Django & Django REST Framework",
+        "category": "API & Backend Ecosystem",
+        "status": "Completed",
+        "level": "Verified Proficiency",
+        "description": "Advanced ORM query optimization, schema relationship modeling, custom serializer structures, viewsets, and secure JWT/OAuth authentication standards.",
+        "evidence": "Full RESTful API Endpoints across all commercial repositories"
+      },
+      {
+        "title": "PostgreSQL & RDBMS Relational Modeling",
+        "category": "Database Engineering",
+        "status": "Completed",
+        "level": "Verified Proficiency",
+        "description": "Architecting normalized relational schemas, transaction indexing strategies, complex query joins, and high-load connection management.",
+        "evidence": "PostgreSQL Production Schema Deployments"
+      },
+      {
+        "title": "React 19 & Modern UI Ecosystem",
+        "category": "Frontend Architecture",
+        "status": "Completed",
+        "level": "Verified Proficiency",
+        "description": "Zero-layout-shift component delivery, custom React hooks, lazy loading, state management, and responsive styling with Tailwind CSS v4.",
+        "evidence": "MNC-Grade Portfolio & Client Application Interfaces"
+      },
+      {
+        "title": "Git & GitHub Version Control Workflow",
+        "category": "Collaborative Standards",
+        "status": "Completed",
+        "level": "Verified Proficiency",
+        "description": "Clean branching strategies, collaborative pull requests, semantic commit structuring, and multi-developer code review practices.",
+        "evidence": "Verified Public & Private GitHub Codebases"
+      },
+      {
+        "title": "Docker Containerization & Environments",
+        "category": "DevOps Infrastructure",
+        "status": "In Progress",
+        "level": "Current Exploration",
+        "description": "Engineering reproducible development environments using multi-stage Dockerfiles and docker-compose orchestration.",
+        "evidence": "Active development roadmap benchmark"
+      },
+      {
+        "title": "AWS Cloud Infrastructure Basics",
+        "category": "Cloud Deployment",
+        "status": "In Progress",
+        "level": "Current Exploration",
+        "description": "Understanding core cloud storage models (S3), compute instances (EC2), and relational RDS configurations for production scaling.",
+        "evidence": "Active development roadmap benchmark"
+      }
+    ]
+  },
+  "notfound": {
+    "title": "Page Not Found",
+    "description": "The destination URL you are looking for does not exist or has been relocated to another route in our architecture.",
+    "returnHome": "Return Home"
+  },
+  "footer": {
+    "nextStep": "Next Step",
+    "ctaTitle": "Interested in Working Together?",
+    "ctaDesc": "I'm currently looking for Software Development Engineer opportunities and exciting freelance projects. Let's engineer impactful products tailored to scale.",
+    "hireMe": "Hire Me",
+    "brandSubtitle": "Python Backend Developer | Django | React | PostgreSQL",
+    "brandQuote": "\"I build scalable, secure, and high-performance web applications with modern technologies. Passionate about clean architecture, REST APIs, and creating exceptional digital experiences.\"",
+    "quickNav": "Quick Navigation",
+    "letsBuildTitle": "Let's Build Something Amazing",
+    "letsBuildSubtitle": "Direct channels & current availability status.",
+    "location": "Delhi NCR / Agra, India",
+    "availText": "Available for Full-Time Opportunities",
+    "copyright": "© 2026 Divyansh Bhadauriya. All rights reserved.",
+    "designedBy": "Designed & Developed by Divyansh Bhadauriya",
+    "builtWith": "Built with",
+    "scrollToTop": "Scroll back to top of page"
+  }
+}
