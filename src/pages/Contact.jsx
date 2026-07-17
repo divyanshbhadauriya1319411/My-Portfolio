@@ -43,7 +43,20 @@ export default function Contact() {
         body: JSON.stringify(form),
       });
 
-      const data = await response.json();
+      let data = {};
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        const text = await response.text();
+        console.error(`Non-JSON response from ${API_BASE_URL} (Status ${response.status}):`, text.slice(0, 200));
+        if (response.status === 404) {
+          showToast("error", `Backend endpoint not found (404). Please verify VITE_API_URL (${API_BASE_URL}) in your .env file.`);
+          setLoading(false);
+          return;
+        }
+        throw new Error(`Server returned status ${response.status}`);
+      }
 
       if (response.ok && data.success) {
         setSubmitted(true);
@@ -54,7 +67,7 @@ export default function Contact() {
       }
     } catch (error) {
       console.error("Contact form submission error:", error);
-      showToast("error", "Unable to connect to server. Please verify your internet connection or try again later.");
+      showToast("error", `Unable to connect to server at ${API_BASE_URL}. Please verify your backend is running.`);
     } finally {
       setLoading(false);
     }
