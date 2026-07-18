@@ -184,11 +184,13 @@ async def send_contact_email(
     }
 
     try:
-        logger.info("Sending Email")
+        logger.info("Resend request initiated: from={}, to={}, subject={}, reply_to={}", settings.FROM_EMAIL, settings.TO_EMAIL, params["subject"], clean_email)
         # Execute Resend SDK call synchronously in a dedicated thread
         response = await asyncio.to_thread(resend.Emails.send, params)
+        logger.info("Resend response received: {}", response)
         logger.info("Resend API successfully delivered contact notification: {}", response)
         return response
     except Exception as exc:
+        logger.exception("Exceptions & Stack trace during Resend send: {}", exc)
         log_email_failure(clean_email, str(exc))
         raise EmailSendError(f"Unable to send email: {exc}") from exc

@@ -27,13 +27,11 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     Returns structured JSON error response.
     """
     from app.logger import log_validation_error, logger
-    logger.info("Incoming Request")
-    logger.info("Validation")
-    logger.error("Failure")
     errors = exc.errors()
+    logger.warning("Validation failed on {}: {} | Status code: 422", request.url.path, errors)
     log_validation_error(request.url.path, errors)
     return JSONResponse(
-        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        status_code=getattr(status, "HTTP_422_UNPROCESSABLE_CONTENT", status.HTTP_422_UNPROCESSABLE_ENTITY),
         content={
             "success": False,
             "message": "Validation failed. Please verify your form inputs.",
@@ -48,8 +46,8 @@ async def recaptcha_exception_handler(request: Request, exc: RecaptchaVerificati
     Returns HTTP 403 Forbidden with exact structured JSON.
     """
     from app.logger import log_recaptcha_failure, logger
-    logger.error("Failure")
     client_ip = request.headers.get("X-Forwarded-For", request.client.host if request.client else "Unknown").split(",")[0].strip()
+    logger.warning("Recaptcha verification exception: {} | Status code: 403", exc)
     log_recaptcha_failure(client_ip, str(exc))
     return JSONResponse(
         status_code=status.HTTP_403_FORBIDDEN,
@@ -66,7 +64,7 @@ async def email_send_exception_handler(request: Request, exc: EmailSendError) ->
     Returns HTTP 500 with exact JSON: {"success": false, "message": "Unable to send email"}.
     """
     from app.logger import log_email_failure, logger
-    logger.error("Failure")
+    logger.exception("EmailSendError stack trace: {} | Status code: 500", exc)
     log_email_failure("Recipient", str(exc))
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -84,7 +82,7 @@ async def rate_limit_exception_handler(request: Request, exc: RateLimitExceeded)
     """
     from app.logger import logger
     client_ip = request.headers.get("X-Forwarded-For", request.client.host if request.client else "Unknown").split(",")[0].strip()
-    logger.warning("Rate limit exceeded for IP %s on %s", client_ip, request.url.path)
+    logger.warning("Rate limit exceeded for IP {} on {} | Status code: 429", client_ip, request.url.path)
     return JSONResponse(
         status_code=status.HTTP_429_TOO_MANY_REQUESTS,
         content={
@@ -98,6 +96,8 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException) 
     """
     Handles standard Starlette/FastAPI HTTP exceptions.
     """
+    from app.logger import logger
+    logger.warning("HTTPException on {}: {} | Status code: {}", request.url.path, exc.detail, exc.status_code)
     return JSONResponse(
         status_code=exc.status_code,
         content={
@@ -112,7 +112,7 @@ async def general_exception_handler(request: Request, exc: Exception) -> JSONRes
     Handles any unhandled unexpected runtime exceptions securely without leaking internal stack traces.
     """
     from app.logger import log_unexpected_exception, logger
-    logger.error("Failure")
+    logger.exception("Unexpected exception caught by global handler: {} | Status code: 500 | Stack trace:", exc)
     log_unexpected_exception(exc)
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

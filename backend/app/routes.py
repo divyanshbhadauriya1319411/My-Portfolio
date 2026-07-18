@@ -47,14 +47,15 @@ async def _process_contact_submission(request: Request, contact: ContactRequest)
     3. Sends formatted HTML contact email via Resend API.
     4. Logs structured submission success and returns {success: true, message: "Email sent successfully"}.
     """
-    logger.info("Incoming Request")
-    logger.info("Validation")
     client_ip = get_client_ip(request)
     user_agent = get_user_agent(request)
 
-    logger.info("Processing contact submission from IP: {} for email: {}", client_ip, contact.email)
+    logger.info("Incoming request: POST {} from IP: {} | User-Agent: {}", request.url.path, client_ip, user_agent)
+    logger.info("Request body: name={}, email={}, subject={}, has_recaptcha={}", contact.name, contact.email, contact.subject, bool(contact.recaptchaToken))
+    logger.info("Validation: passed for email={}", contact.email)
 
     # 1. Verify Google reCAPTCHA token if included by frontend (raises RecaptchaVerificationError if verification fails)
+    logger.info("Recaptcha check: token_present={}", bool(contact.recaptchaToken))
     if contact.recaptchaToken:
         await verify_recaptcha_token(contact.recaptchaToken, remote_ip=client_ip)
 
@@ -66,14 +67,17 @@ async def _process_contact_submission(request: Request, contact: ContactRequest)
     )
 
     # 3. Log success and return exact structured JSON response
-    logger.info("Success")
+    return_json = {
+        "success": True,
+        "message": "Email sent successfully"
+    }
+    logger.info("Email success: Contact notification sent for {}", contact.email)
+    logger.info("Status code: 200 OK")
+    logger.info("Return JSON: {}", return_json)
     log_request_success(client_ip, contact.email)
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content={
-            "success": True,
-            "message": "Email sent successfully"
-        }
+        content=return_json
     )
 
 

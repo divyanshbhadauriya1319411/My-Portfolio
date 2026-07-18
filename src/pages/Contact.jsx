@@ -63,6 +63,9 @@ export default function Contact() {
         console.log("Request URL:", requestUrl);
       }
 
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
       let response;
       try {
         response = await fetch(requestUrl, {
@@ -76,12 +79,19 @@ export default function Contact() {
             subject: trimmedSubject,
             message: trimmedMessage,
           }),
+          signal: controller.signal,
         });
+        clearTimeout(timeoutId);
       } catch (networkError) {
+        clearTimeout(timeoutId);
         if (import.meta.env.DEV) {
-          console.error("Network failure during fetch:", networkError);
+          console.error("Network/Timeout failure during fetch:", networkError);
         }
-        showToast("error", "❌ Server unavailable. Unable to connect to server.");
+        if (networkError.name === "AbortError") {
+          showToast("error", "❌ Server is taking too long to respond.");
+        } else {
+          showToast("error", "❌ Unable to reach backend.");
+        }
         setLoading(false);
         return;
       }
@@ -94,28 +104,63 @@ export default function Contact() {
       const isJson = contentType.includes("application/json");
 
       if (!response.ok) {
-        if (response.status === 422) {
-          showToast("error", "❌ Failed to send message: Validation failed. Please check inputs.");
+        if (response.status === 404) {
+          showToast("error", "❌ API endpoint not found.");
           setLoading(false);
           return;
         }
+
+        if (response.status === 500) {
+          if (isJson) {
+            try {
+              const errData = await response.json();
+              const backendMsg = errData.message || "Internal server error.";
+              showToast("error", backendMsg.startsWith("❌") ? backendMsg : `❌ ${backendMsg}`);
+              setLoading(false);
+              return;
+            } catch (e) {
+              // fallback below if parsing fails
+            }
+          }
+          showToast("error", "❌ Internal server error.");
+          setLoading(false);
+          return;
+        }
+
+        if (response.status === 422) {
+          if (isJson) {
+            try {
+              const errData = await response.json();
+              const backendMsg = errData.message || "Validation failed.";
+              showToast("error", backendMsg.startsWith("❌") ? backendMsg : `❌ ${backendMsg}`);
+              setLoading(false);
+              return;
+            } catch (e) {
+              // fallback below
+            }
+          }
+          showToast("error", "❌ Validation failed.");
+          setLoading(false);
+          return;
+        }
+
         if (isJson) {
           try {
             const errData = await response.json();
-            const backendMsg = errData.message || "Failed to send message.";
+            const backendMsg = errData.message || `Error (${response.status})`;
             showToast("error", backendMsg.startsWith("❌") ? backendMsg : `❌ ${backendMsg}`);
           } catch (parseErr) {
-            showToast("error", "❌ Failed to send message.");
+            showToast("error", `❌ Error (${response.status})`);
           }
         } else {
-          showToast("error", "❌ Server unavailable.");
+          showToast("error", `❌ Server unavailable (${response.status}). Render instance may be waking up, please try again.`);
         }
         setLoading(false);
         return;
       }
 
       if (!isJson) {
-        showToast("error", "❌ Server unavailable.");
+        showToast("error", "❌ Server unavailable (unexpected HTML response).");
         setLoading(false);
         return;
       }
@@ -131,14 +176,14 @@ export default function Contact() {
         setForm({ name: "", email: "", subject: "", message: "" });
         showToast("success", "✅ Message sent successfully.");
       } else {
-        const backendMsg = data.message || "Failed to send message.";
+        const backendMsg = data.message || "Unable to send email.";
         showToast("error", backendMsg.startsWith("❌") ? backendMsg : `❌ ${backendMsg}`);
       }
     } catch (error) {
       if (import.meta.env.DEV) {
         console.error("Contact form submission error:", error);
       }
-      showToast("error", "❌ Server unavailable.");
+      showToast("error", "❌ Unable to reach backend.");
     } finally {
       setLoading(false);
     }
