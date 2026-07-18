@@ -184,6 +184,7 @@ async def send_contact_email(
     }
 
     try:
+        logger.info("Sending Email")
         # Execute Resend SDK call synchronously in a dedicated thread
         response = await asyncio.to_thread(resend.Emails.send, params)
         logger.info("Resend API successfully delivered contact notification: {}", response)

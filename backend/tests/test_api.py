@@ -73,7 +73,7 @@ def test_contact_submission_success_without_token(mock_send):
     assert response.status_code == 200
     data = response.json()
     assert data["success"] is True
-    assert data["message"] == "Your message has been sent successfully."
+    assert data["message"] == "Email sent successfully"
     mock_send.assert_called_once()
 
 
@@ -94,4 +94,23 @@ def test_contact_submission_resend_error(mock_verify, mock_send):
     assert response.status_code == 500
     data = response.json()
     assert data["success"] is False
-    assert data["message"] == "Unable to send email."
+    assert data["message"] == "Unable to send email"
+
+
+@patch("app.routes.send_contact_email", new_callable=AsyncMock)
+def test_contact_submission_exact_requirement_payload(mock_send):
+    """Verify exact payload requested in requirements returns HTTP 200 and success."""
+    mock_send.return_value = {"id": "resend_test_exact"}
+
+    payload = {
+        "name": "Divyansh",
+        "email": "test@gmail.com",
+        "subject": "Testing",
+        "message": "Hello"
+    }
+    response = client.post("/api/contact", json=payload)
+    assert response.status_code == 200
+    data = response.json()
+    assert data["success"] is True
+    assert data["message"] == "Email sent successfully"
+    mock_send.assert_called_once()

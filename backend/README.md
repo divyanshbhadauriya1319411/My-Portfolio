@@ -81,7 +81,7 @@ FROM_EMAIL=onboarding@resend.dev
 TO_EMAIL=your_personal_gmail@gmail.com
 
 # CORS Allowed Frontend Origins (comma-separated list)
-ALLOWED_ORIGINS=http://localhost:5173,https://YOUR-VERCEL-DOMAIN.vercel.app
+ALLOWED_ORIGINS=http://localhost:5173,https://divyanshbhadauriya-portfolio.vercel.app
 
 # Environment Mode
 ENVIRONMENT=development
@@ -156,7 +156,7 @@ In your root project directory (`c:\Users\Divyansh\OneDrive\Desktop\Project\Port
 VITE_API_URL=http://localhost:8000
 
 # Production (replace with your deployed Render URL)
-# VITE_API_URL=https://your-backend.onrender.com
+# VITE_API_URL=https://portfolio-backend.onrender.com
 ```
 
 ### 2. React `Contact.jsx` Implementation Overview
@@ -179,7 +179,7 @@ When the visitor clicks **Send Message**:
    - `RESEND_API_KEY`: Your live Resend API key (`re_...`)
    - `FROM_EMAIL`: Verified domain email (`contact@yourdomain.com`)
    - `TO_EMAIL`: Your destination Gmail address
-   - `ALLOWED_ORIGINS`: Your Vercel domain (`https://your-portfolio.vercel.app,http://localhost:5173`)
+   - `ALLOWED_ORIGINS`: Your Vercel domain (`https://divyanshbhadauriya-portfolio.vercel.app,http://localhost:5173`)
    - `ENVIRONMENT`: `production`
 6. Click **Apply Blueprint**. Render builds and deploys your service.
 

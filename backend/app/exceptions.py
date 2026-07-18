@@ -26,7 +26,10 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     Handles Pydantic validation failures (empty fields, malformed email, large payload).
     Returns structured JSON error response.
     """
-    from app.logger import log_validation_error
+    from app.logger import log_validation_error, logger
+    logger.info("Incoming Request")
+    logger.info("Validation")
+    logger.error("Failure")
     errors = exc.errors()
     log_validation_error(request.url.path, errors)
     return JSONResponse(
@@ -44,7 +47,8 @@ async def recaptcha_exception_handler(request: Request, exc: RecaptchaVerificati
     Handles Google reCAPTCHA verification failures.
     Returns HTTP 403 Forbidden with exact structured JSON.
     """
-    from app.logger import log_recaptcha_failure
+    from app.logger import log_recaptcha_failure, logger
+    logger.error("Failure")
     client_ip = request.headers.get("X-Forwarded-For", request.client.host if request.client else "Unknown").split(",")[0].strip()
     log_recaptcha_failure(client_ip, str(exc))
     return JSONResponse(
@@ -59,15 +63,16 @@ async def recaptcha_exception_handler(request: Request, exc: RecaptchaVerificati
 async def email_send_exception_handler(request: Request, exc: EmailSendError) -> JSONResponse:
     """
     Handles Resend API email delivery failures.
-    Returns HTTP 500 with exact JSON: {"success": false, "message": "Unable to send email."}.
+    Returns HTTP 500 with exact JSON: {"success": false, "message": "Unable to send email"}.
     """
-    from app.logger import log_email_failure
+    from app.logger import log_email_failure, logger
+    logger.error("Failure")
     log_email_failure("Recipient", str(exc))
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={
             "success": False,
-            "message": "Unable to send email."
+            "message": "Unable to send email"
         }
     )
 
@@ -106,7 +111,8 @@ async def general_exception_handler(request: Request, exc: Exception) -> JSONRes
     """
     Handles any unhandled unexpected runtime exceptions securely without leaking internal stack traces.
     """
-    from app.logger import log_unexpected_exception
+    from app.logger import log_unexpected_exception, logger
+    logger.error("Failure")
     log_unexpected_exception(exc)
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

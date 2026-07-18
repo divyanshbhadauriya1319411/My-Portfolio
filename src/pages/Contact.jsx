@@ -20,7 +20,7 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState({ show: false, type: "", message: "" });
 
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+  const API = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/$/, "") : "";
 
   const showToast = (type, message) => {
     setToast({ show: true, type, message });
@@ -31,43 +31,114 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return;
+
+    const trimmedName = form.name.trim();
+    const trimmedEmail = form.email.trim();
+    const trimmedSubject = form.subject.trim();
+    const trimmedMessage = form.message.trim();
+
+    if (!trimmedName || !trimmedEmail || !trimmedSubject || !trimmedMessage) {
+      showToast("error", "Please fill all required fields.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedEmail)) {
+      showToast("error", "Please enter a valid email address.");
+      return;
+    }
+
+    if (!API) {
+      showToast("error", "❌ Server unavailable. (VITE_API_URL environment variable is missing)");
+      return;
+    }
+
     setLoading(true);
     setToast({ show: false, type: "", message: "" });
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      const requestUrl = `${API}/api/contact`;
+      if (import.meta.env.DEV) {
+        console.log("Request URL:", requestUrl);
+      }
 
-      let data = {};
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.includes("application/json")) {
-        data = await response.json();
-      } else {
-        const text = await response.text();
-        console.error(`Non-JSON response from ${API_BASE_URL} (Status ${response.status}):`, text.slice(0, 200));
-        if (response.status === 404) {
-          showToast("error", `Backend endpoint not found (404). Please verify VITE_API_URL (${API_BASE_URL}) in your .env file.`);
+      let response;
+      try {
+        response = await fetch(requestUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: trimmedName,
+            email: trimmedEmail,
+            subject: trimmedSubject,
+            message: trimmedMessage,
+          }),
+        });
+      } catch (networkError) {
+        if (import.meta.env.DEV) {
+          console.error("Network failure during fetch:", networkError);
+        }
+        showToast("error", "❌ Server unavailable. Unable to connect to server.");
+        setLoading(false);
+        return;
+      }
+
+      if (import.meta.env.DEV) {
+        console.log("Status Code:", response.status);
+      }
+
+      const contentType = response.headers.get("content-type") || "";
+      const isJson = contentType.includes("application/json");
+
+      if (!response.ok) {
+        if (response.status === 422) {
+          showToast("error", "❌ Failed to send message: Validation failed. Please check inputs.");
           setLoading(false);
           return;
         }
-        throw new Error(`Server returned status ${response.status}`);
+        if (isJson) {
+          try {
+            const errData = await response.json();
+            const backendMsg = errData.message || "Failed to send message.";
+            showToast("error", backendMsg.startsWith("❌") ? backendMsg : `❌ ${backendMsg}`);
+          } catch (parseErr) {
+            showToast("error", "❌ Failed to send message.");
+          }
+        } else {
+          showToast("error", "❌ Server unavailable.");
+        }
+        setLoading(false);
+        return;
       }
 
-      if (response.ok && data.success) {
+      if (!isJson) {
+        showToast("error", "❌ Server unavailable.");
+        setLoading(false);
+        return;
+      }
+
+      const data = await response.json();
+
+      if (import.meta.env.DEV) {
+        console.log("Response:", data);
+      }
+
+      if (data.success) {
         setSubmitted(true);
         setForm({ name: "", email: "", subject: "", message: "" });
-        showToast("success", data.message || "Your message has been sent successfully.");
+        showToast("success", "✅ Message sent successfully.");
       } else {
-        showToast("error", data.message || "Unable to send message. Please verify your inputs.");
+        const backendMsg = data.message || "Failed to send message.";
+        showToast("error", backendMsg.startsWith("❌") ? backendMsg : `❌ ${backendMsg}`);
       }
     } catch (error) {
-      console.error("Contact form submission error:", error);
-      showToast("error", `Unable to connect to server at ${API_BASE_URL}. Please verify your backend is running.`);
+      if (import.meta.env.DEV) {
+        console.error("Contact form submission error:", error);
+      }
+      showToast("error", "❌ Server unavailable.");
     } finally {
       setLoading(false);
     }

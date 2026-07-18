@@ -1,5 +1,5 @@
 from functools import lru_cache
-from typing import List, Union
+from typing import Any, List, Union
 from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -31,8 +31,8 @@ class Settings(BaseSettings):
     )
 
     # CORS Configuration
-    ALLOWED_ORIGINS: List[str] = Field(
-        default=["http://localhost:5173", "https://YOUR-VERCEL-DOMAIN.vercel.app"],
+    ALLOWED_ORIGINS: Union[List[str], str] = Field(
+        default=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000", "https://divyanshbhadauriya-portfolio.vercel.app"],
         description="List of allowed CORS frontend origins"
     )
 
@@ -41,6 +41,19 @@ class Settings(BaseSettings):
         default="development",
         description="Deployment environment (development, staging, production)"
     )
+
+    @classmethod
+    def decode_complex_value(cls, field_name: str, field: Any, value: Any) -> Any:
+        """
+        Gracefully decode ALLOWED_ORIGINS whether passed as JSON or comma-separated string from .env.
+        """
+        if field_name == "ALLOWED_ORIGINS" and isinstance(value, str):
+            try:
+                import json
+                return json.loads(value)
+            except Exception:
+                return [origin.strip() for origin in value.split(",") if origin.strip()]
+        return super().decode_complex_value(field_name, field, value)
 
     @field_validator("ALLOWED_ORIGINS", mode="before")
     @classmethod
@@ -53,7 +66,7 @@ class Settings(BaseSettings):
             return [origin.strip() for origin in v.split(",") if origin.strip()]
         if isinstance(v, list):
             return [str(origin).strip() for origin in v if str(origin).strip()]
-        return ["http://localhost:5173"]
+        return ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000", "https://divyanshbhadauriya-portfolio.vercel.app"]
 
     model_config = SettingsConfigDict(
         env_file=".env",

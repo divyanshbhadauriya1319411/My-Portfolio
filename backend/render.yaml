@@ -19,6 +19,6 @@ services:
       - key: RECAPTCHA_MIN_SCORE
         value: "0.5"
       - key: ALLOWED_ORIGINS
-        value: http://localhost:5173,https://YOUR-VERCEL-DOMAIN.vercel.app
+        value: http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,https://divyanshbhadauriya-portfolio.vercel.app
       - key: ENVIRONMENT
         value: production

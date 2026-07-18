@@ -45,8 +45,10 @@ async def _process_contact_submission(request: Request, contact: ContactRequest)
     1. Extracts true client IP address and User-Agent.
     2. Verifies optional Google reCAPTCHA v3/v2 token if present; returns HTTP 403 if rejected.
     3. Sends formatted HTML contact email via Resend API.
-    4. Logs structured submission success and returns {success: true, message: "Your message has been sent successfully."}.
+    4. Logs structured submission success and returns {success: true, message: "Email sent successfully"}.
     """
+    logger.info("Incoming Request")
+    logger.info("Validation")
     client_ip = get_client_ip(request)
     user_agent = get_user_agent(request)
 
@@ -64,12 +66,13 @@ async def _process_contact_submission(request: Request, contact: ContactRequest)
     )
 
     # 3. Log success and return exact structured JSON response
+    logger.info("Success")
     log_request_success(client_ip, contact.email)
     return JSONResponse(
         status_code=status.HTTP_200_OK,
         content={
             "success": True,
-            "message": "Your message has been sent successfully."
+            "message": "Email sent successfully"
         }
     )
 
