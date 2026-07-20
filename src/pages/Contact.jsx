@@ -256,10 +256,10 @@ export default function Contact() {
                   {t("contact.emailLabel")}
                 </span>
                 <a
-                  href="mailto:divyanshbhadauriya888@gmail.com"
+                  href="mailto:divyanshbhadauriya899@gmail.com"
                   className="text-sm font-bold text-primary hover:text-[#2563EB] dark:hover:text-[#38BDF8] transition-colors interactive-link"
                 >
-                  divyanshbhadauriya888@gmail.com
+                  divyanshbhadauriya899@gmail.com
                 </a>
               </div>
             </div>
@@ -273,7 +273,7 @@ export default function Contact() {
                   {t("contact.locationLabel")}
                 </span>
                 <p className="text-sm font-bold text-primary transition-colors">
-                  {t("contact.locationValue")}
+                  {t("contact.locationValue", "Noida, Uttar Pradesh, India")}
                 </p>
                 <span className="text-xs text-secondary transition-colors">{t("contact.openToRemote")}</span>
               </div>
@@ -288,7 +288,7 @@ export default function Contact() {
                   {t("contact.phoneLabel")}
                 </span>
                 <p className="text-sm font-bold text-primary transition-colors">
-                  {t("contact.phoneValue")}
+                  {t("contact.phoneValue", "+91 7897350468")}
                 </p>
               </div>
             </div>
@@ -310,7 +310,7 @@ export default function Contact() {
                 <FaGithub size={15} /> {t("contact.githubProfile")}
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/divyanshbhadauriya"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-[#2563EB] hover:text-white text-secondary hover:text-white text-xs font-bold transition-all interactive-link border border-default"
@@ -467,8 +467,8 @@ export default function Contact() {
         </h2>
         <div className="rounded-3xl overflow-hidden border border-default h-72 sm:h-96 w-full bg-card shadow-xl transition-all duration-500">
           <iframe
-            title="Delhi NCR & Agra Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113911.31295980644!2d77.9407384351322!3d27.176166164284167!2m3!1f0!2f0!3f0!3m2!1f1024!2f1024!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39740d857c2f41d9%3A0x784aef38a9523b42!2sAgra%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+            title="Noida, Uttar Pradesh Location Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.2089851!3d28.5272803!2m3!1f0!2f0!3f0!3m2!1f1024!2f1024!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
             className="w-full h-full border-none filter grayscale dark:invert contrast-125 opacity-90 transition-all"
             loading="lazy"
             allowFullScreen

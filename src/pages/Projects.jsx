@@ -32,7 +32,10 @@ import {
   SiSwagger,
   SiJavascript,
   SiTypescript,
+  SiFastapi,
+  SiNodedotjs,
 } from "react-icons/si";
+import { VscOpenai } from "react-icons/vsc";
 import { useTranslation } from "react-i18next";
 
 /* ── Real Production Projects Data (Verified via GitHub) ───────────────── */
@@ -40,15 +43,15 @@ const PROJECTS_DATA = [
   {
     id: "rama-international",
     number: "01",
-    title: "RAMA INTERNATIONAL Platform",
+    title: "RAMA INTERNATIONAL — Commercial Export Platform",
     category: "Full Stack",
-    role: "Full Stack Architect",
+    role: "Full-Stack Architect",
     duration: "3 Months",
-    oneLineDesc: "Commercial export trading & catalog platform with dynamic filtering, automated lead routing, and optimized Django REST backend.",
+    oneLineDesc: "Full-stack commercial export trading and catalog platform with dynamic product filtering, automated inquiry routing, and optimized backend APIs.",
     description:
-      "A complete commercial trading & catalog platform engineered for an export enterprise. Features dynamic product filtering, automated lead routing, and optimized backend query pipelines.",
+      "Full-stack commercial export trading and catalog platform with dynamic product filtering, automated inquiry routing, and optimized backend APIs.",
     longDescription:
-      "RAMA INTERNATIONAL is an enterprise-grade web application designed to streamline product exploration and client inquiry handling. Built using Django for robust backend ORM management, role authorization, and secure REST endpoints, alongside React 19 and Tailwind CSS for an instant, responsive interface across global devices.",
+      "RAMA INTERNATIONAL is an enterprise-grade web application designed to streamline product exploration and client inquiry handling. Built using Django for robust backend ORM management, role authorization, and secure REST endpoints, alongside React.js and Tailwind CSS for an instant, responsive interface across global devices.",
     overview:
       "RAMA INTERNATIONAL required a high-performance digital platform capable of handling real-time product discovery and structured client inquiries without latency spikes.",
     problem:
@@ -64,14 +67,14 @@ const PROJECTS_DATA = [
     results:
       "Reduced inquiry processing turnaround by 65% and delivered a 100/100 Lighthouse accessibility and performance UX.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-    tech: ["React 19", "Django REST", "Python", "PostgreSQL", "Tailwind CSS v4", "JWT Auth"],
+    tech: ["React.js", "Tailwind CSS", "Django REST Framework", "PostgreSQL", "JWT Auth"],
     highlights: [
-      "Authentication",
-      "Recruiter Dashboard",
-      "Candidate Routing",
-      "Responsive UI",
+      "Dynamic Product Filtering",
+      "Automated Inquiry Routing",
+      "Django REST Framework",
+      "Role-Based JWT Auth",
       "PostgreSQL Indexing",
-      "Django REST API",
+      "Responsive UI",
     ],
     github: "https://github.com/divyanshbhadauriya1319411/RAMAINTERNATIONAL",
     live: "https://github.com/divyanshbhadauriya1319411/RAMAINTERNATIONAL",
@@ -79,21 +82,21 @@ const PROJECTS_DATA = [
   {
     id: "rent-drive",
     number: "02",
-    title: "Rent-Drive Vehicle Portal",
+    title: "Rent-Drive — Vehicle Rental & Reservation Portal",
     category: "Full Stack",
-    role: "Full Stack Engineer",
+    role: "Full-Stack Engineer",
     duration: "2 Months",
-    oneLineDesc: "End-to-end vehicle reservation and rental portal complete with multi-state availability validation, pricing algorithms, and admin dashboard.",
+    oneLineDesc: "End-to-end vehicle rental platform featuring real-time availability checks, multi-date pricing algorithms, and an admin dashboard.",
     description:
-      "End-to-end vehicle reservation and rental management portal complete with multi-state availability validation, pricing algorithms, and administrative dashboard controls.",
+      "End-to-end vehicle rental platform featuring real-time availability checks, multi-date pricing algorithms, and an admin dashboard.",
     longDescription:
-      "Rent-Drive solves real-time reservation concurrency through relational database modeling in PostgreSQL, custom Django serializers, and clean token-based authentication. The React interface provides seamless vehicle discovery with zero layout shifts.",
+      "Rent-Drive solves real-time reservation concurrency through relational database modeling in PostgreSQL, custom backend serializers, and clean token-based authentication. The React interface provides seamless vehicle discovery with zero layout shifts.",
     overview:
       "Rent-Drive is a dedicated vehicle rental platform engineered to prevent double-booking anomalies and provide seamless multi-date reservation pricing.",
     problem:
       "Concurrency challenges in high-demand vehicle reservation systems often cause overlapping bookings when multiple users attempt to reserve the same vehicle simultaneously.",
     solution:
-      "Implemented PostgreSQL transaction isolation and database-level constraint locking inside Django ORM serializers to guarantee strict transactional integrity.",
+      "Implemented PostgreSQL transaction isolation and database-level constraint locking inside ORM serializers to guarantee strict transactional integrity.",
     dbDesign:
       "Normalized PostgreSQL tables separating Vehicle instances, Booking intervals, and User profiles with compound indexing on start/end dates.",
     apiFlow:
@@ -103,30 +106,69 @@ const PROJECTS_DATA = [
     results:
       "Achieved zero booking conflicts under concurrent load testing and smooth 60fps UI discovery.",
     image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=80",
-    tech: ["Python", "Django REST", "React", "PostgreSQL", "SQL", "JavaScript"],
+    tech: ["React.js", "Node.js/Django REST", "PostgreSQL", "Tailwind CSS"],
     highlights: [
-      "Reservation Engine",
-      "Availability Check",
-      "Pricing Algorithms",
-      "Token Auth",
-      "Relational Schema",
-      "Admin Controls",
+      "Real-Time Availability",
+      "Multi-Date Pricing",
+      "Admin Dashboard",
+      "Relational Validation",
+      "Transaction Locking",
+      "Responsive UI",
     ],
     github: "https://github.com/divyanshbhadauriya1319411/Rent-Drive",
     live: "https://github.com/divyanshbhadauriya1319411/Rent-Drive",
   },
   {
-    id: "storesaga",
+    id: "ai-sign-language",
     number: "03",
-    title: "StoreSaga E-Commerce Ecosystem",
-    category: "Full Stack",
-    role: "Full Stack Developer",
+    title: "AI Sign Language Recognition & Translation System",
+    category: "AI / Backend",
+    role: "AI & Full-Stack Developer",
     duration: "2 Months",
-    oneLineDesc: "Modern e-commerce platform offering instant debounced search, dynamic shopping cart calculation, and responsive product catalog.",
+    oneLineDesc: "AI-powered real-time hand gesture recognition system converting sign language into text/speech using computer vision and deep learning models.",
     description:
-      "A feature-rich e-commerce web platform offering responsive catalog navigation, instantaneous cart calculations, and modular frontend state management.",
+      "AI-powered real-time hand gesture recognition system converting sign language into text/speech using computer vision and deep learning models.",
     longDescription:
-      "StoreSaga showcases clean frontend component separation and fast RESTful API data hydration. Designed with responsive product cards, real-time cart drawer updates, and optimized bundle delivery.",
+      "Built with Python, OpenCV, TensorFlow/MediaPipe, and FastAPI backend streaming to a React.js frontend. Performs real-time video landmark tracking to translate sign language gestures into natural language text and speech.",
+    overview:
+      "Designed to bridge communication barriers between deaf/hard-of-hearing individuals and non-signers through instantaneous computer vision inference.",
+    problem:
+      "Communication barriers between deaf/hard-of-hearing individuals and non-signers require high-accuracy, real-time translation tools without heavy processing lag.",
+    solution:
+      "Engineered a real-time computer vision pipeline utilizing MediaPipe hand landmarks and TensorFlow neural network classification served over high-speed FastAPI WebSockets.",
+    dbDesign:
+      "Structured gesture vocabulary mapping database with confidence threshold validation logs.",
+    apiFlow:
+      "Low-latency WebSocket streaming between React client camera feeds and FastAPI neural classification servers.",
+    challenges:
+      "Achieving high frame-rate inference (30+ FPS) inside web browsers without frame drops or memory leaks.",
+    results:
+      "Real-time gesture recognition accuracy exceeding 94% across standard sign language datasets.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    tech: ["Python", "OpenCV", "TensorFlow/MediaPipe", "FastAPI", "React.js"],
+    highlights: [
+      "Computer Vision",
+      "MediaPipe Landmarks",
+      "TensorFlow Models",
+      "FastAPI WebSockets",
+      "Text & Speech Output",
+      "Real-Time Inference",
+    ],
+    github: "https://github.com/divyanshbhadauriya1319411",
+    live: "https://github.com/divyanshbhadauriya1319411",
+  },
+  {
+    id: "storesaga",
+    number: "04",
+    title: "StoreSaga — Modern E-Commerce Ecosystem",
+    category: "Frontend",
+    role: "Front-End Developer",
+    duration: "2 Months",
+    oneLineDesc: "Feature-rich e-commerce platform offering instant debounced search, dynamic shopping cart calculation, and responsive product catalog.",
+    description:
+      "Feature-rich e-commerce platform offering instant debounced search, dynamic shopping cart calculation, and responsive product catalog.",
+    longDescription:
+      "StoreSaga showcases clean frontend component separation and fast RESTful API data hydration. Designed with responsive product cards, real-time cart drawer updates, and optimized debounced search queries.",
     overview:
       "StoreSaga was developed to demonstrate modern retail UX patterns including instant filtering, persisted shopping carts, and seamless checkout flows.",
     problem:
@@ -142,21 +184,21 @@ const PROJECTS_DATA = [
     results:
       "Delivered sub-100ms category switching and clean modular code maintainability.",
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1200&q=80",
-    tech: ["JavaScript", "React", "REST API", "Tailwind CSS", "State Management"],
+    tech: ["React.js", "JavaScript", "Tailwind CSS", "REST APIs", "State Management"],
     highlights: [
+      "Debounced Search",
       "Dynamic Cart",
-      "Instant Search",
-      "REST Integration",
-      "Responsive Grid",
+      "REST API Hydration",
+      "Responsive Cards",
       "State Management",
-      "Secure Checkout",
+      "Sub-100ms UI",
     ],
     github: "https://github.com/divyanshbhadauriya1319411/StoreSaga",
     live: "https://github.com/divyanshbhadauriya1319411/StoreSaga",
   },
   {
     id: "portfolio-architecture",
-    number: "04",
+    number: "05",
     title: "MNC-Grade Portfolio Architecture",
     category: "Frontend",
     role: "Senior Frontend Engineer",
@@ -193,45 +235,6 @@ const PROJECTS_DATA = [
     github: "https://github.com/divyanshbhadauriya1319411/divyanshbhadauriya1319411",
     live: "https://github.com/divyanshbhadauriya1319411/divyanshbhadauriya1319411",
   },
-  {
-    id: "django-enterprise-api",
-    number: "05",
-    title: "Enterprise Backend REST API Suite",
-    category: "Backend",
-    role: "Backend Architect",
-    duration: "2 Months",
-    oneLineDesc: "High-throughput Django REST API suite equipped with JWT authentication, rate-limiting, Pytest automation, and Swagger documentation.",
-    description:
-      "Standalone high-throughput API service suite featuring JWT authentication, automated test suites, rate-limiting, query optimization, and structured Swagger documentation.",
-    longDescription:
-      "Designed specifically for high-load backend architecture testing. Demonstrates strict serializer validation, PostgreSQL connection pooling recommendations, pagination rules, and multi-tenant schema isolation.",
-    overview:
-      "A dedicated backend API suite built to simulate high-load enterprise microservice communication and strict payload validation.",
-    problem:
-      "Unoptimized backend APIs often suffer from N+1 database queries and insecure token expiration handling under concurrent requests.",
-    solution:
-      "Implemented `select_related` / `prefetch_related` queryset optimizations along with comprehensive Swagger/OpenAPI documentation and automated Pytest suites.",
-    dbDesign:
-      "Multi-tenant schema design with isolated tables and strict indexing on foreign key lookups.",
-    apiFlow:
-      "Secured endpoints utilizing JWT token validation, role-based access control (RBAC), and custom throttling classes.",
-    challenges:
-      "Balancing comprehensive payload validation with minimal CPU overhead during serialization.",
-    results:
-      "Eliminated N+1 query bottlenecks and produced production-ready interactive API documentation.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-    tech: ["Python", "Django REST", "PostgreSQL", "Docker", "Swagger"],
-    highlights: [
-      "JWT Authentication",
-      "Connection Pooling",
-      "Rate Limiting",
-      "Swagger Docs",
-      "Test Suite",
-      "Schema Isolation",
-    ],
-    github: "https://github.com/divyanshbhadauriya1319411",
-    live: null,
-  },
 ];
 
 /* Tech Icon Mapping Helper */
@@ -239,7 +242,10 @@ const getTechIcon = (techName) => {
   const lower = techName.toLowerCase();
   if (lower.includes("react")) return { icon: <FaReact size={15} className="text-[#2563EB] dark:text-[#38BDF8]" />, label: techName };
   if (lower.includes("python")) return { icon: <FaPython size={15} className="text-[#2563EB] dark:text-[#38BDF8]" />, label: techName };
+  if (lower.includes("fastapi")) return { icon: <SiFastapi size={15} className="text-teal-600 dark:text-teal-400" />, label: techName };
   if (lower.includes("django")) return { icon: <SiDjango size={15} className="text-emerald-600 dark:text-emerald-400" />, label: techName };
+  if (lower.includes("node")) return { icon: <SiNodedotjs size={15} className="text-green-600 dark:text-green-400" />, label: techName };
+  if (lower.includes("openai") || lower.includes("gemini") || lower.includes("ai")) return { icon: <VscOpenai size={15} className="text-emerald-500" />, label: techName };
   if (lower.includes("postgre") || lower.includes("sql")) return { icon: <SiPostgresql size={15} className="text-blue-600 dark:text-blue-400" />, label: techName };
   if (lower.includes("tailwind")) return { icon: <SiTailwindcss size={15} className="text-cyan-600 dark:text-cyan-400" />, label: techName };
   if (lower.includes("docker")) return { icon: <SiDocker size={15} className="text-blue-600 dark:text-blue-500" />, label: techName };
@@ -250,6 +256,7 @@ const getTechIcon = (techName) => {
   if (lower.includes("swagger")) return { icon: <SiSwagger size={15} className="text-emerald-600 dark:text-emerald-500" />, label: techName };
   if (lower.includes("javascript")) return { icon: <SiJavascript size={15} className="text-yellow-600 dark:text-yellow-400" />, label: techName };
   if (lower.includes("typescript")) return { icon: <SiTypescript size={15} className="text-blue-600 dark:text-blue-500" />, label: techName };
+  if (lower.includes("opencv") || lower.includes("tensorflow") || lower.includes("mediapipe")) return { icon: <FaCode size={15} className="text-amber-500" />, label: techName };
   return { icon: <FaCode size={14} className="text-[#2563EB] dark:text-[#38BDF8]" />, label: techName };
 };
 

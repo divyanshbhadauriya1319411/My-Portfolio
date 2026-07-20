@@ -1,38 +1,40 @@
 export const experiences = [
   {
     id: 1,
-    role: "Full Stack Developer",
-    company: "Freelance & Consultations",
-    duration: "2024 - Present",
-    description: "Architecting premium end-to-end web applications. Lead developer on the Rama International hotel system, designing glassmorphic customer frontends in React 19 and scalable secure Django REST API gateways. Implemented secure stripe payment processing and multi-user roles.",
+    role: "Full-Stack Developer Intern",
+    company: "Ducat India, Noida",
+    duration: "Jan 2026 - Present",
+    description: "Gaining intensive practical training and hands-on experience in full-stack web development using MERN stack (MongoDB, Express.js, React.js, Node.js) and Python backend architectures. Developing scalable RESTful APIs, optimizing database schemas, and building modern responsive frontends.",
     points: [
-      "Built custom responsive React frontends with high-fidelity animations using Framer Motion.",
-      "Optimized Django REST framework backend endpoints, reducing latency by 35% through query caching.",
-      "Deployed websites on Vercel and Render, implementing full CI/CD GitHub workflows."
+      "Architecting full-stack web applications with MERN & Python ecosystems.",
+      "Developing secure REST APIs with JWT authentication and role-based authorization.",
+      "Optimizing query performance across MongoDB and PostgreSQL databases.",
+      "Collaborating on responsive UI component delivery using React 19 and Tailwind CSS v4."
     ]
   },
   {
     id: 2,
-    role: "Django Developer & Backend Engineer",
-    company: "Software Development Firm",
-    duration: "2023 - 2024",
-    description: "Designed, documented, and tested database architectures and web APIs for client services. Focused on database efficiency and JWT authentication flows.",
+    role: "Freelance & Open Source Developer",
+    company: "Independent Clients & Self-Employed",
+    duration: "Sept 2024 - Present",
+    description: "Architecting premium end-to-end web applications for clients and contributing to open-source software. Lead developer on RAMA INTERNATIONAL commercial export trading platform and Rent-Drive vehicle reservation portal.",
     points: [
-      "Designed PostgreSQL database schemas, writing complex SQL queries and migration scripts.",
-      "Developed robust backend gateways utilizing Django REST Framework (DRF) and JSON Web Tokens.",
-      "Set up API testing frameworks using Postman, automating request and schema validations."
+      "Built custom responsive React frontends with high-fidelity animations using Framer Motion and GSAP.",
+      "Optimized Django REST Framework backend endpoints, reducing latency by 35% through query caching.",
+      "Integrated AI capabilities using Gemini and OpenAI APIs for automated client workflows.",
+      "Deployed applications on Vercel and Render, maintaining CI/CD pipelines and high Lighthouse benchmarks."
     ]
   },
   {
     id: 3,
-    role: "Frontend Developer Intern",
-    company: "Tech Startups",
-    duration: "2022 - 2023",
-    description: "Translated design concepts and high-fidelity wireframes into interactive, responsive, and cross-browser compatible code bases.",
+    role: "Full-Stack Developer Intern",
+    company: "TechsyHub, Noida",
+    duration: "June 2024 - Sept 2024",
+    description: "Built and maintained frontend components with React.js and Tailwind CSS while developing robust backend REST APIs using Node.js and Express.js.",
     points: [
-      "Utilized modern CSS layout techniques including Tailwind CSS flexbox and grid modules.",
-      "Managed application states using React hooks and Context API for modular user flows.",
-      "Collaborated with project managers and designers to optimize loading performance and accessibility."
+      "Utilized modern CSS layout modules including Tailwind CSS flexbox and grid modules.",
+      "Worked with MongoDB and PostgreSQL for data modeling and query optimization.",
+      "Collaborated with engineering leads to implement JWT authentication and secure API integration."
     ]
   }
 ];
@@ -40,19 +42,19 @@ export const experiences = [
 export const education = [
   {
     id: 1,
-    degree: "Bachelor of Technology in Computer Science",
-    institution: "Technical University",
-    duration: "2020 - 2024",
-    description: "Specialized in Software Architecture, Full Stack Web Development, and Advanced Databases. Graduated with honors, focusing capstone project on automated booking systems.",
-    grade: "GPA: 8.5/10"
+    degree: "Bachelor of Computer Applications (BCA)",
+    institution: "Dr. Bhim Rao Ambedkar University, Agra",
+    duration: "2023 - 2026",
+    description: "Specialized in Software Engineering, Full Stack Web Development, Relational Database Management Systems (RDBMS), and Object-Oriented Programming (Python/C++).",
+    grade: "Pursuing"
   },
   {
     id: 2,
     degree: "Higher Secondary Certificate (Class XII)",
     institution: "Science Academy",
-    duration: "2018 - 2020",
-    description: "Completed specialization in Physics, Chemistry, and Mathematics (PCM). Actively participated in regional coding bootcamps and science exhibitions.",
-    grade: "Percentage: 92%"
+    duration: "2021 - 2023",
+    description: "Completed specialization in Physics, Chemistry, and Mathematics (PCM). Actively participated in regional coding bootcamps and tech competitions.",
+    grade: "First Division"
   }
 ];
 

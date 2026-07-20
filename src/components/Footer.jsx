@@ -24,8 +24,8 @@ const FOOTER_NAV = [
 
 const SOCIAL_LINKS = [
   { href: "https://github.com/divyanshbhadauriya1319411", icon: <FaGithub size={20} />, label: "GitHub" },
-  { href: "https://linkedin.com", icon: <FaLinkedin size={20} />, label: "LinkedIn" },
-  { href: "mailto:divyanshbhadauriya888@gmail.com", icon: <FaEnvelope size={20} />, label: "Email" },
+  { href: "https://linkedin.com/in/divyanshbhadauriya", icon: <FaLinkedin size={20} />, label: "LinkedIn" },
+  { href: "mailto:divyanshbhadauriya899@gmail.com", icon: <FaEnvelope size={20} />, label: "Email" },
 ];
 
 const TECH_BADGES = ["React", "Vite", "Tailwind CSS", "Framer Motion", "GSAP"];
@@ -296,10 +296,10 @@ export default function Footer() {
               <div className="flex items-center gap-2.5">
                 <FaEnvelope className="text-[#2563EB] dark:text-[#38BDF8] shrink-0" />
                 <a
-                  href="mailto:divyanshbhadauriya888@gmail.com"
+                  href="mailto:divyanshbhadauriya899@gmail.com"
                   className="hover:text-[#2563EB] dark:hover:text-[#38BDF8] transition-colors underline-offset-4 hover:underline"
                 >
-                  divyanshbhadauriya888@gmail.com
+                  divyanshbhadauriya899@gmail.com
                 </a>
               </div>
             </div>

@@ -29,17 +29,19 @@
     "greeting": "Hi, I'm",
     "name": "Divyansh Bhadauriya",
     "roles": [
-      "Python Developer",
-      "Backend Engineer",
-      "Django Developer",
-      "Full Stack Developer"
+      "React Developer",
+      "Full Stack Developer",
+      "MERN Developer",
+      "Python Developer"
     ],
-    "introduction": "I build scalable backend architectures, high-throughput RESTful APIs, and responsive full-stack applications with Python, Django, PostgreSQL, and React 19. Passionate about clean code, low latency, and engineering exceptional product experiences.",
+    "roleSubtitle": "Front-End & Full-Stack Developer",
+    "introduction": "Building modern web applications with React, Node.js, FastAPI, and AI-powered solutions.",
     "viewProjects": "View Projects",
     "downloadResume": "Download Resume",
     "contactMe": "Contact Me",
+    "hireMe": "Hire Me",
     "connectLabel": "Connect :",
-    "location": "Delhi, India",
+    "location": "Noida, Uttar Pradesh, India",
     "degreeExp": "BCA · 1+ Yrs Exp",
     "statusBadge": "Available for Hire",
     "scrollToExplore": "Scroll to Explore",
@@ -82,16 +84,16 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Full Stack Developer passionate about backend architecture, relational databases, and high-performance React web interfaces.",
-    "roleTag": "Python & Django Developer · Full Stack Engineer",
+    "subtitle": "Front-End & Full-Stack Developer building modern, responsive, and performance-driven web applications.",
+    "roleTag": "Front-End & Full-Stack Developer (React / Node.js / MERN)",
     "openToWork": "Open to Work",
     "resumePdf": "Resume PDF",
     "badge": "ABOUT ME",
     "heading": "Building Scalable Software That Solves Real Problems",
-    "description": "I'm a Full Stack Developer specializing in Python, Django REST Framework, React, PostgreSQL, and modern backend architecture. I enjoy building scalable APIs, responsive web applications, and clean user experiences with production-ready code.",
+    "description": "Full-Stack & Front-End Developer with practical experience building modern, responsive, and performance-driven web applications. Skilled in React.js, Node.js, Express.js, REST APIs, and database management using MongoDB and PostgreSQL. Experienced in developing scalable backend systems with FastAPI and integrating AI-driven features using Gemini and OpenAI APIs. Strong focus on clean architecture, responsive UI design, and solving real-world engineering problems.",
     "statusAvailable": "Available for Full-Time",
-    "techBadge": "Python Developer",
-    "locationBadge": "Delhi, India",
+    "techBadge": "Full Stack Developer",
+    "locationBadge": "Noida, Uttar Pradesh, India",
     "stats": {
       "projects": "Projects Completed",
       "technologies": "Technologies",
@@ -107,56 +109,50 @@
     "journeySubtitle": "From core programming foundations to architecting production full-stack systems.",
     "timelineItems": [
       {
-        "icon": "Started Programming",
-        "title": "Started Programming",
-        "description": "Mastered core C/C++ & Python programming fundamentals, data structures, algorithmic problem solving, and Linux command-line workflows.",
-        "year": "2023"
+        "icon": "Full-Stack Developer Intern",
+        "title": "Full-Stack Developer Intern — Ducat India, Noida",
+        "description": "Gaining intensive practical training and hands-on experience in full-stack web development using MERN stack (MongoDB, Express.js, React.js, Node.js) and Python backend architectures. Developing scalable REST APIs and responsive frontends.",
+        "year": "Jan 2026 - Present"
       },
       {
-        "icon": "Learned Python & SQL",
-        "title": "Learned Python & SQL",
-        "description": "Deep dived into object-oriented Python architecture, relational database design, complex SQL queries, and normalization techniques.",
-        "year": "2023"
+        "icon": "Full-Stack Developer Intern",
+        "title": "Full-Stack Developer Intern — TechsyHub",
+        "description": "Built and maintained frontend components with React.js and Tailwind CSS. Developed backend REST APIs using Node.js and Express.js. Worked with MongoDB and PostgreSQL for data modeling and query optimization.",
+        "year": "June 2024 - Sept 2024"
       },
       {
-        "icon": "Built Full Stack Projects",
-        "title": "Built Full Stack Projects",
-        "description": "Architected decoupled RESTful APIs using Django REST Framework, JWT authentication, and dynamic React single-page interfaces.",
-        "year": "2024"
+        "icon": "Freelance & Open Source",
+        "title": "Freelance & Open Source Developer",
+        "description": "Developed custom web applications for clients using React, Node.js, and FastAPI. Contributed to full-stack and AI-driven open-source projects on GitHub. Built automated workflows and integrated LLM APIs (OpenAI / Gemini).",
+        "year": "Sept 2024 - Present"
       },
       {
-        "icon": "Building Production Applications",
-        "title": "Building Production Applications",
-        "description": "Delivered commercial platforms including RAMA INTERNATIONAL and Rent-Drive with PostgreSQL indexing and enterprise cloud deployments.",
-        "year": "2024 – Present"
-      },
-      {
-        "icon": "Looking for Software Engineer Opportunities",
-        "title": "Looking for Software Engineer Opportunities",
-        "description": "Actively seeking full-time backend, full stack, or Python developer roles in high-impact engineering organizations and MNCs.",
-        "year": "Now"
+        "icon": "Bachelor of Computer Applications",
+        "title": "Bachelor of Computer Applications (BCA)",
+        "description": "Dr. Bhim Rao Ambedkar University, Agra. Specialized in software engineering, database management, and web programming.",
+        "year": "2023 - 2026"
       }
     ],
     "downloadResume": "Download Resume",
     "letsConnect": "Let's Connect",
     "bioParagraphs": [
-      "Hello! I am Divyansh Bhadauriya, a dedicated Full Stack Developer specializing in Python, Django REST Framework, and React 19. Currently pursuing my Bachelor of Computer Applications (BCA), I combine formal computer science principles with rigorous real-world engineering practice.",
-      "My core engineering focus centers on backend architectures and clean data modeling. I thrive on structuring relational PostgreSQL schemas, optimizing database query pipelines, and exposing secure, decoupled RESTful APIs using Django REST Framework and JWT authentication.",
-      "On the frontend, I deliver responsive, highly polished user interfaces utilizing React 19 and Tailwind CSS v4. I believe that an exceptional software product requires both a rock-solid, scalable backend and an intuitive, zero-bloat user interface.",
-      "Whether working independently or within cross-functional engineering teams, my standard is clean code, thorough documentation, and reliable production benchmarks."
+      "Full-Stack & Front-End Developer with practical experience building modern, responsive, and performance-driven web applications. Skilled in React.js, Node.js, Express.js, REST APIs, and database management using MongoDB and PostgreSQL. Experienced in developing scalable backend systems with FastAPI and integrating AI-driven features using Gemini and OpenAI APIs. Strong focus on clean architecture, responsive UI design, and solving real-world engineering problems.",
+      "My core engineering focus centers on clean full-stack architectures and scalable web applications. I thrive on structuring both relational and NoSQL schemas (PostgreSQL, MongoDB), optimizing data query pipelines, and exposing secure, decoupled RESTful APIs using Node.js, Express, and FastAPI.",
+      "On the frontend, I deliver responsive, highly polished user interfaces utilizing React.js and Tailwind CSS. I believe that an exceptional software product requires both a rock-solid, scalable backend and an intuitive, zero-bloat user interface.",
+      "Whether working independently on freelance client projects or collaborating in engineering internships like Ducat India and TechsyHub, my standard is clean code, thorough documentation, and reliable production benchmarks."
     ],
     "letsConnectBtn": "Let's Connect & Discuss Roles",
     "quickFactsTitle": "Quick Facts & Summary",
     "quickFacts": [
       {
         "label": "Base Location",
-        "value": "Delhi NCR / Agra, India",
+        "value": "Noida, Uttar Pradesh, India",
         "subtitle": "Open to Remote Worldwide"
       },
       {
         "label": "Professional Experience",
-        "value": "1+ Years Practical",
-        "subtitle": "Independent & Commercial Projects"
+        "value": "2+ Years Practical",
+        "subtitle": "Internships, Freelance & Open Source"
       },
       {
         "label": "Undergraduate Degree",
@@ -172,22 +168,28 @@
     "milestonesTitle": "Career Milestones & Academic Journey",
     "milestones": [
       {
-        "year": "2024 – Present",
-        "company": "Commercial Delivery & Independent Systems",
-        "title": "Full Stack & Django Backend Engineering",
-        "description": "Architected and deployed enterprise-level platforms including RAMA INTERNATIONAL and Rent-Drive. Designed modular REST APIs using Django REST Framework, implemented PostgreSQL relational models with strict indexing, and built responsive React single-page interfaces."
+        "year": "Jan 2026 – Present",
+        "company": "Ducat India — Noida, India",
+        "title": "Full-Stack Developer Intern",
+        "description": "Gaining intensive practical training and hands-on experience in full-stack web development using MERN stack (MongoDB, Express.js, React.js, Node.js) and Python backend architectures. Developing scalable REST APIs and responsive frontends."
       },
       {
-        "year": "2023 – Present",
+        "year": "Sept 2024 – Present",
+        "company": "Freelance & Open Source",
+        "title": "Freelance & Open Source Developer",
+        "description": "Developed custom web applications for clients using React, Node.js, and FastAPI. Contributed to full-stack and AI-driven open-source projects on GitHub. Built automated workflows and integrated LLM APIs (OpenAI / Gemini)."
+      },
+      {
+        "year": "June 2024 – Sept 2024",
+        "company": "TechsyHub — Noida, India",
+        "title": "Full-Stack Developer Intern",
+        "description": "Built and maintained frontend components with React.js and Tailwind CSS. Developed backend REST APIs using Node.js and Express.js. Worked with MongoDB and PostgreSQL for data modeling and query optimization."
+      },
+      {
+        "year": "2023 – 2026",
         "company": "Dr. Bhim Rao Ambedkar University, Agra",
         "title": "Bachelor of Computer Applications (BCA)",
-        "description": "Pursuing formal undergraduate degree with coursework focusing on relational database management systems (RDBMS), object-oriented programming paradigms in C/C++/Python, Linux operating systems, and computer networks."
-      },
-      {
-        "year": "2023",
-        "company": "Self-Directed Technical Immersion",
-        "title": "Foundations of Web & Backend Development",
-        "description": "Mastered core programming fundamentals, Linux command-line workflows, Git branching strategies, and responsive frontend styling with modern CSS utilities."
+        "description": "Specialized in software engineering, database management, and web programming."
       }
     ]
   },
@@ -205,41 +207,29 @@
     ],
     "downloadResume": "Download Resume",
     "categories": {
-      "Backend": {
-        "title": "Backend Engineering",
-        "description": "Robust server-side architectures, RESTful API design, background workers, and secure token authentication.",
-        "level": "Backend Specialist",
-        "experience": "2+ Years"
-      },
-      "Languages": {
-        "title": "Programming Languages",
-        "description": "Core programming foundations for system architecture, data structures, and web interface development.",
-        "level": "Core Expertise",
-        "experience": "2+ Years"
-      },
       "Frontend": {
         "title": "Frontend Development",
-        "description": "Responsive, zero-bloat single-page applications with smooth state management and dynamic UI animations.",
+        "description": "Building modern, responsive, zero-bloat web interfaces with React, Redux, Tailwind CSS, and HTML/CSS.",
         "level": "Production Ready",
+        "experience": "2+ Years"
+      },
+      "Backend": {
+        "title": "Backend & APIs",
+        "description": "Architecting scalable RESTful APIs, high-throughput backend services, and secure JWT token authentication with Node.js, Express, and FastAPI.",
+        "level": "Backend Specialist",
         "experience": "2+ Years"
       },
       "Database": {
         "title": "Database Systems",
-        "description": "Relational data modeling, schema optimization, complex query execution, and high-performance indexing.",
+        "description": "Relational and NoSQL data modeling, schema optimization, complex SQL queries, and high-performance indexing across MongoDB and PostgreSQL.",
         "level": "RDBMS Specialist",
         "experience": "2+ Years"
       },
       "Tools": {
-        "title": "Developer Tools & Cloud",
-        "description": "Version control workflows, API debugging suites, containerization, and automated cloud deployments.",
-        "level": "Workflow & Cloud",
+        "title": "AI & Tools",
+        "description": "Integrating LLM services (Gemini API, OpenAI API), version control workflows, API debugging suites, containerization, and automated cloud deployments.",
+        "level": "Workflow & AI",
         "experience": "2+ Years"
-      },
-      "SoftSkills": {
-        "title": "Soft Skills & Leadership",
-        "description": "Cross-functional communication, agile collaboration, rapid debugging, and analytical problem solving.",
-        "level": "Continuous Growth",
-        "experience": "Continuous"
       }
     },
     "items": {
@@ -387,6 +377,30 @@
         "challenges": "Managing accurate timezone-aware booking intervals across diverse geographic locations without client-side calculation errors.",
         "results": "Achieved zero booking conflicts under concurrent load testing and smooth 60fps UI discovery."
       },
+      "ai-sign-language": {
+        "title": "AI-Powered Sign Language Translator",
+        "category": "Python / AI",
+        "oneLineDesc": "Real-time sign language recognition using Python, OpenCV, MediaPipe, and TensorFlow/Keras.",
+        "role": "Machine Learning Engineer",
+        "duration": "2 Months",
+        "highlights": [
+          "OpenCV Vision",
+          "MediaPipe Tracking",
+          "TensorFlow/Keras",
+          "Real-Time Inference",
+          "FastAPI Backend",
+          "Audio Speech Output"
+        ],
+        "description": "Real-time gesture recognition and translation pipeline built with Python, OpenCV, MediaPipe, and TensorFlow/Keras with audio speech output.",
+        "longDescription": "AI-Powered Sign Language Translator detects hand landmarks via MediaPipe and classifies complex sign language gestures in real-time using deep neural networks (CNN/LSTM) in TensorFlow/Keras. The recognized text is instantly translated to voice synthesis via FastAPI endpoints.",
+        "overview": "A specialized computer vision application built to bridge communication gaps for the deaf and hard-of-hearing community through real-time AI inference.",
+        "problem": "Standard gesture recognition algorithms suffer from high latency and poor accuracy under varying lighting conditions and camera angles.",
+        "solution": "Leveraged MediaPipe's 21 3D hand landmark coordinates fed into an optimized deep learning model to achieve robust real-time prediction at 30+ FPS.",
+        "dbDesign": "Custom dataset generation storing landmark coordinate sequences and gesture labels in structured JSON/HDF5 formats for neural network training.",
+        "apiFlow": "FastAPI asynchronous WebSocket service streaming frames and returning instant text predictions and audio buffers.",
+        "challenges": "Optimizing frame processing and inference speed to run smoothly without frame drops on standard consumer hardware.",
+        "results": "Achieved 96.4% classification accuracy on test gesture vocabularies with sub-35ms inference latency."
+      },
       "storesaga": {
         "title": "StoreSaga E-Commerce Ecosystem",
         "category": "Full Stack",
@@ -469,47 +483,62 @@
     "techStack": "Tech Stack",
     "timeline": [
       {
-        "role": "Backend Developer",
-        "company": "RAMA INTERNATIONAL",
-        "duration": "2025 – Present",
-        "location": "Commercial Delivery & Remote",
+        "role": "Full-Stack Developer Intern",
+        "company": "Ducat India, Noida",
+        "duration": "Jan 2026 – Present",
+        "location": "Noida, Uttar Pradesh, India",
         "status": "🟢 Current",
-        "description": "Designed and developed scalable recruitment and trading platforms using Django REST Framework, PostgreSQL and React. Focused on authentication, API optimization, deployment and production-ready architecture.",
+        "description": "Gaining intensive practical training and hands-on experience in full-stack web development using MERN stack (MongoDB, Express.js, React.js, Node.js) and Python backend architectures. Developing scalable REST APIs, optimizing database schemas, and building modern responsive frontends.",
         "achievements": [
-          "Built JWT Authentication",
-          "Developed REST APIs",
-          "PostgreSQL Database Design",
-          "Optimized Backend Performance",
-          "Responsive React Frontend"
+          "Developing full-stack web applications with MERN & Python ecosystems",
+          "Architecting secure REST APIs with JWT authentication & role authorization",
+          "Optimizing query performance across MongoDB and PostgreSQL databases",
+          "Collaborating on interactive, responsive UI delivery using React 19 & Tailwind CSS v4"
         ],
-        "tech": ["Python", "Django", "DRF", "React", "PostgreSQL", "JWT", "Docker", "Git"]
+        "tech": ["React.js", "Node.js", "Express.js", "MongoDB", "Python", "PostgreSQL", "REST API", "Tailwind CSS", "Git"]
       },
       {
-        "role": "Freelance Web Developer",
+        "role": "Freelance & Open Source Developer",
         "company": "Independent Clients & Self-Employed",
-        "duration": "2024 – Present",
+        "duration": "Sept 2024 – Present",
         "location": "Remote",
         "status": "🟢 Current",
-        "description": "Built custom websites and backend systems for clients with responsive UI, secure APIs and deployment.",
+        "description": "Architecting premium end-to-end web applications for clients and contributing to open-source software. Lead developer on RAMA INTERNATIONAL commercial export trading platform and Rent-Drive vehicle reservation portal.",
         "achievements": [
-          "Engineered custom client web portals",
-          "Designed secure RESTful API integrations",
-          "Deployed production apps to Render & Vercel"
+          "Built custom responsive React frontends with Framer Motion and GSAP",
+          "Optimized Django REST Framework backend endpoints, reducing latency by 35%",
+          "Integrated AI capabilities using Gemini and OpenAI APIs",
+          "Deployed production apps to Vercel and Render with full CI/CD pipelines"
         ],
-        "tech": ["React", "Python", "Django", "REST API", "Tailwind CSS", "JavaScript", "PostgreSQL", "Git"]
+        "tech": ["React.js", "FastAPI", "Python", "Django", "Node.js", "OpenAI API", "Gemini API", "PostgreSQL", "Git"]
+      },
+      {
+        "role": "Full-Stack Developer Intern",
+        "company": "TechsyHub",
+        "duration": "June 2024 – Sept 2024",
+        "location": "Noida, India",
+        "status": "Completed",
+        "description": "Built and maintained frontend components with React.js and Tailwind CSS. Developed backend REST APIs using Node.js and Express.js. Worked with MongoDB and PostgreSQL for data modeling and query optimization. Integrated third-party APIs and implemented JWT authentication.",
+        "achievements": [
+          "Developed full-stack features with React & Node.js",
+          "Engineered REST APIs and JWT Authentication",
+          "Optimized PostgreSQL & MongoDB data models",
+          "Integrated third-party APIs & improved UX"
+        ],
+        "tech": ["React.js", "Node.js", "Express.js", "PostgreSQL", "MongoDB", "Tailwind CSS", "JWT", "REST API"]
       },
       {
         "role": "BCA Student",
         "company": "Dr. Bhim Rao Ambedkar University",
-        "duration": "2023 – Present",
+        "duration": "2023 – 2026",
         "location": "Agra, India",
         "status": "🎓 In Progress",
-        "description": "Relevant Coursework: Data Structures, DBMS, Operating Systems, Python, Web Development.",
+        "description": "Specialized in software engineering, database management, and web programming.",
         "achievements": [
-          "Data Structures & Algorithms Mastery",
-          "Relational Database Systems (SQL/DBMS)",
-          "Operating Systems & Linux Environment",
-          "Object-Oriented Programming with Python"
+          "Core Computer Science & Data Structures",
+          "Relational Database Systems (SQL & PostgreSQL)",
+          "Object-Oriented Programming (Python & C++)",
+          "Web Applications & Systems Architecture"
         ],
         "tech": ["Python", "SQL", "Data Structures", "DBMS", "Operating Systems", "C/C++", "Git", "Linux"]
       }
@@ -523,9 +552,9 @@
       "techLabel": "Technologies",
       "techValue": "15+",
       "focusLabel": "Current Focus",
-      "focusValue": "Backend Engineering",
+      "focusValue": "Full-Stack & AI Solutions",
       "expLabel": "Experience",
-      "expValue": "2+ Years"
+      "expValue": "2+ Years Practical"
     }
   },
   "resume": {
@@ -563,10 +592,10 @@
     "availDesc": "Ready to integrate with remote engineering teams globally or on-site across India.",
     "emailLabel": "Email Address",
     "locationLabel": "Location",
-    "locationValue": "Delhi NCR / Agra, India",
+    "locationValue": "Noida, Uttar Pradesh, India",
     "openToRemote": "Open to Worldwide Remote",
     "phoneLabel": "Phone / Direct",
-    "phoneValue": "Available upon email request",
+    "phoneValue": "+91 7897350468",
     "profNetworks": "Professional Networks",
     "githubProfile": "GitHub Profile",
     "linkedinProfile": "LinkedIn Profile",
@@ -664,14 +693,14 @@
   "footer": {
     "nextStep": "Next Step",
     "ctaTitle": "Interested in Working Together?",
-    "ctaDesc": "I'm currently looking for Software Development Engineer opportunities and exciting freelance projects. Let's engineer impactful products tailored to scale.",
+    "ctaDesc": "I'm currently looking for Front-End & Full-Stack Developer opportunities and exciting freelance projects. Let's engineer impactful products tailored to scale.",
     "hireMe": "Hire Me",
-    "brandSubtitle": "Python Backend Developer | Django | React | PostgreSQL",
+    "brandSubtitle": "Front-End & Full-Stack Developer | React | Node.js | MERN",
     "brandQuote": "\"I build scalable, secure, and high-performance web applications with modern technologies. Passionate about clean architecture, REST APIs, and creating exceptional digital experiences.\"",
     "quickNav": "Quick Navigation",
     "letsBuildTitle": "Let's Build Something Amazing",
     "letsBuildSubtitle": "Direct channels & current availability status.",
-    "location": "Delhi NCR / Agra, India",
+    "location": "Noida, Uttar Pradesh, India",
     "availText": "Available for Full-Time Opportunities",
     "copyright": "© 2026 Divyansh Bhadauriya. All rights reserved.",
     "designedBy": "Designed & Developed by Divyansh Bhadauriya",

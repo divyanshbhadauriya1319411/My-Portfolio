@@ -20,6 +20,7 @@ import {
   FaShieldAlt,
   FaHtml5,
   FaCss3Alt,
+  FaLayerGroup,
 } from "react-icons/fa";
 import {
   SiDjango,
@@ -34,7 +35,13 @@ import {
   SiPostman,
   SiRender,
   SiVercel,
+  SiNodedotjs,
+  SiExpress,
+  SiFastapi,
+  SiMongodb,
+  SiRedux,
 } from "react-icons/si";
+import { VscOpenai } from "react-icons/vsc";
 
 export default function Skills() {
   const { t } = useTranslation();
@@ -57,42 +64,29 @@ export default function Skills() {
   /* ── Skills & Categories Configuration ── */
   const CATEGORIES = [
     {
-      id: "Backend",
-      emoji: "⚙",
-      icon: <FaServer className="text-emerald-500 text-2xl" />,
-      skills: [
-        { name: "Python", percentage: 95, icon: <FaPython className="text-amber-500 text-lg" /> },
-        { name: "Django", percentage: 90, icon: <SiDjango className="text-emerald-600 dark:text-emerald-400 text-lg" /> },
-        { name: "Django REST Framework", percentage: 92, icon: <SiDjango className="text-emerald-400 text-lg" /> },
-        { name: "JWT Authentication", percentage: 88, icon: <FaShieldAlt className="text-purple-400 text-lg" /> },
-        { name: "REST APIs", percentage: 92, icon: <FaServer className="text-cyan-400 text-lg" /> },
-        { name: "Celery", percentage: 78, icon: <FaNetworkWired className="text-emerald-400 text-lg" /> },
-        { name: "Swagger", percentage: 85, icon: <FaCode className="text-blue-400 text-lg" /> },
-        { name: "Docker", percentage: 75, icon: <SiDocker className="text-sky-400 text-lg" /> },
-      ],
-    },
-    {
-      id: "Languages",
-      emoji: "🐍",
-      icon: <FaPython className="text-amber-500 text-2xl" />,
-      skills: [
-        { name: "Python", percentage: 95, icon: <FaPython className="text-amber-500 text-lg" /> },
-        { name: "JavaScript", percentage: 88, icon: <SiJavascript className="text-yellow-400 text-lg" /> },
-        { name: "SQL", percentage: 88, icon: <FaDatabase className="text-blue-500 text-lg" /> },
-        { name: "HTML", percentage: 95, icon: <FaHtml5 className="text-orange-500 text-lg" /> },
-        { name: "CSS", percentage: 92, icon: <FaCss3Alt className="text-blue-400 text-lg" /> },
-      ],
-    },
-    {
       id: "Frontend",
       emoji: "⚛",
       icon: <FaReact className="text-[#38BDF8] text-2xl animate-spin-slow" />,
       skills: [
-        { name: "React", percentage: 90, icon: <FaReact className="text-[#38BDF8] text-lg" /> },
+        { name: "React.js", percentage: 92, icon: <FaReact className="text-[#38BDF8] text-lg" /> },
+        { name: "Redux", percentage: 86, icon: <SiRedux className="text-purple-500 text-lg" /> },
+        { name: "JavaScript (ES6+)", percentage: 90, icon: <SiJavascript className="text-yellow-400 text-lg" /> },
+        { name: "HTML5", percentage: 95, icon: <FaHtml5 className="text-orange-500 text-lg" /> },
+        { name: "CSS3", percentage: 92, icon: <FaCss3Alt className="text-blue-400 text-lg" /> },
         { name: "Tailwind CSS", percentage: 94, icon: <SiTailwindcss className="text-cyan-400 text-lg" /> },
-        { name: "Bootstrap", percentage: 85, icon: <SiBootstrap className="text-purple-500 text-lg" /> },
-        { name: "Framer Motion", percentage: 82, icon: <SiFramer className="text-pink-400 text-lg" /> },
-        { name: "Responsive Design", percentage: 95, icon: <FaCode className="text-emerald-400 text-lg" /> },
+        { name: "Bootstrap", percentage: 85, icon: <SiBootstrap className="text-purple-400 text-lg" /> },
+      ],
+    },
+    {
+      id: "Backend",
+      emoji: "⚙",
+      icon: <FaServer className="text-emerald-500 text-2xl" />,
+      skills: [
+        { name: "Node.js", percentage: 88, icon: <SiNodedotjs className="text-green-500 text-lg" /> },
+        { name: "Express.js", percentage: 86, icon: <SiExpress className="text-primary text-lg" /> },
+        { name: "FastAPI", percentage: 88, icon: <SiFastapi className="text-teal-400 text-lg" /> },
+        { name: "REST APIs", percentage: 92, icon: <FaServer className="text-cyan-400 text-lg" /> },
+        { name: "JWT Authentication", percentage: 90, icon: <FaShieldAlt className="text-purple-400 text-lg" /> },
       ],
     },
     {
@@ -100,23 +94,25 @@ export default function Skills() {
       emoji: "🗄",
       icon: <FaDatabase className="text-blue-500 text-2xl" />,
       skills: [
+        { name: "MongoDB", percentage: 88, icon: <SiMongodb className="text-green-500 text-lg" /> },
         { name: "PostgreSQL", percentage: 88, icon: <SiPostgresql className="text-blue-400 text-lg" /> },
-        { name: "MySQL", percentage: 85, icon: <SiMysql className="text-amber-500 text-lg" /> },
-        { name: "SQLite", percentage: 88, icon: <SiSqlite className="text-sky-400 text-lg" /> },
-        { name: "SQL Optimization", percentage: 82, icon: <FaDatabase className="text-emerald-400 text-lg" /> },
+        { name: "SQL", percentage: 90, icon: <FaDatabase className="text-blue-500 text-lg" /> },
+        { name: "Query Optimization", percentage: 85, icon: <FaCheckCircle className="text-emerald-400 text-lg" /> },
       ],
     },
     {
       id: "Tools",
       emoji: "🛠",
-      icon: <FaCode className="text-amber-500 text-2xl" />,
+      icon: <FaLightbulb className="text-amber-500 text-2xl" />,
       skills: [
+        { name: "Gemini API", percentage: 88, icon: <FaLightbulb className="text-[#38BDF8] text-lg" /> },
+        { name: "OpenAI API", percentage: 88, icon: <VscOpenai className="text-emerald-500 text-lg" /> },
         { name: "Git", percentage: 92, icon: <FaGitAlt className="text-orange-500 text-lg" /> },
         { name: "GitHub", percentage: 94, icon: <FaGithub className="text-primary text-lg" /> },
-        { name: "VS Code", percentage: 95, icon: <FaCode className="text-blue-500 text-lg" /> },
         { name: "Postman", percentage: 90, icon: <SiPostman className="text-orange-400 text-lg" /> },
+        { name: "VS Code", percentage: 95, icon: <FaCode className="text-blue-500 text-lg" /> },
         { name: "Render", percentage: 88, icon: <SiRender className="text-primary text-lg" /> },
-        { name: "Vercel", percentage: 88, icon: <SiVercel className="text-primary text-lg" /> },
+        { name: "Vercel", percentage: 90, icon: <SiVercel className="text-primary text-lg" /> },
       ],
     },
     {

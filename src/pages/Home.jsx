@@ -20,10 +20,10 @@ import { useTranslation } from "react-i18next";
 import profileImg from "../assets/profile.jpg";
 
 const HERO_ROLES = [
-  "Python Developer",
-  "Backend Engineer",
-  "Django Developer",
+  "React Developer",
   "Full Stack Developer",
+  "MERN Developer",
+  "Python Developer",
 ];
 
 const TARGET_COMPANIES = [
@@ -111,10 +111,10 @@ export default function Home() {
   const [roleIdx, setRoleIdx] = useState(0);
 
   const HERO_ROLES = t("home.roles", { returnObjects: true }) || [
-    "Python Developer",
-    "Backend Engineer",
-    "Django Developer",
+    "React Developer",
     "Full Stack Developer",
+    "MERN Developer",
+    "Python Developer",
   ];
 
   const WHY_HIRE_ME_DATA = t("home.whyHireMe", { returnObjects: true }) || [];
@@ -124,15 +124,15 @@ export default function Home() {
     <FaDatabase className="text-[#2563EB] dark:text-[#38BDF8] text-2xl" />,
   ];
 
-  const PREVIEW_KEYS = ["rama-international", "rent-drive", "portfolio-architecture"];
+  const PREVIEW_KEYS = ["rama-international", "rent-drive", "ai-sign-language"];
   const PREVIEW_TECH = [
-    ["React 19", "Django", "PostgreSQL", "Tailwind CSS"],
-    ["Python", "Django REST Framework", "React", "SQL"],
-    ["React 19", "Tailwind CSS v4", "GSAP", "Framer Motion"],
+    ["React.js", "Django REST", "PostgreSQL", "Tailwind CSS"],
+    ["React.js", "Node.js/Django", "PostgreSQL", "Tailwind CSS"],
+    ["Python", "OpenCV", "TensorFlow", "FastAPI"],
   ];
   const PREVIEW_GITHUB = [
-    "https://github.com/divyanshbhadauriya1319411",
-    "https://github.com/divyanshbhadauriya1319411",
+    "https://github.com/divyanshbhadauriya1319411/RAMAINTERNATIONAL",
+    "https://github.com/divyanshbhadauriya1319411/Rent-Drive",
     "https://github.com/divyanshbhadauriya1319411",
   ];
 
@@ -380,10 +380,13 @@ export default function Home() {
                 <h1 className="text-clamp-hero font-extrabold font-heading tracking-tight text-zinc-900 dark:text-white break-words">
                   {t("home.name")}
                 </h1>
+                <p className="text-lg sm:text-2xl font-bold font-heading text-secondary pt-1">
+                  {t("home.roleSubtitle", "Front-End & Full-Stack Developer")}
+                </p>
               </div>
 
               {/* Animated Role Switcher */}
-              <div className="h-10 sm:h-16 flex items-center justify-center lg:justify-start overflow-hidden">
+              <div className="h-10 sm:h-16 flex items-center justify-center lg:justify-start overflow-hidden pt-2">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={roleIdx}
@@ -458,7 +461,7 @@ export default function Home() {
                 </a>
               </motion.div>
 
-              {/* Button 3: Contact Me */}
+              {/* Button 3: Hire Me */}
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },
@@ -473,7 +476,7 @@ export default function Home() {
                   className="group flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-slate-100 dark:bg-white/5 border border-default hover:bg-[#2563EB] hover:text-white dark:hover:bg-[#38BDF8] dark:hover:text-zinc-900 text-secondary hover:border-transparent font-bold text-sm sm:text-base transition-all interactive-btn touch-target w-full sm:w-auto"
                 >
                   <FaEnvelope size={14} className="text-[#2563EB] dark:text-[#38BDF8] group-hover:text-current transition-colors" />
-                  <span>{t("home.contactMe")}</span>
+                  <span>{t("home.hireMe", "Hire Me")}</span>
                 </Link>
               </motion.div>
             </motion.div>
@@ -493,8 +496,8 @@ export default function Home() {
 
               {[
                 { href: "https://github.com/divyanshbhadauriya1319411", icon: <FaGithub size={18} />, label: "GitHub" },
-                { href: "https://linkedin.com", icon: <FaLinkedin size={18} />, label: "LinkedIn" },
-                { href: "mailto:divyanshbhadauriya888@gmail.com", icon: <FaEnvelope size={18} />, label: "Email" },
+                { href: "https://linkedin.com/in/divyanshbhadauriya", icon: <FaLinkedin size={18} />, label: "LinkedIn" },
+                { href: "mailto:divyanshbhadauriya899@gmail.com", icon: <FaEnvelope size={18} />, label: "Email" },
               ].map(({ href, icon, label }) => (
                 <motion.a
                   key={label}
