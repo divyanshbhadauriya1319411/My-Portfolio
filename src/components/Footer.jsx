@@ -11,6 +11,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import WhatsAppButton from "./WhatsAppButton";
 
 const FOOTER_NAV = [
   { key: "home",       label: "Home",       path: "/" },
@@ -345,6 +346,9 @@ export default function Footer() {
         </motion.div>
 
       </div>
+
+      {/* ── Floating WhatsApp Contact Button (Bottom Right, Above Rocket) ──────── */}
+      <WhatsAppButton variant="floating" />
 
       {/* ── Floating Rocket Back-To-Top Button (Bottom Right) ──────── */}
       <div className="fixed bottom-6 right-6 z-50">

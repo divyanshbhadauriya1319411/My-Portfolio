@@ -18,6 +18,7 @@ import {
 import { useTranslation } from "react-i18next";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
+import WhatsAppButton from "./WhatsAppButton";
 
 const NAV_ITEMS = [
   { key: "home",       label: "Home",       path: "/",           icon: <FaHome size={14} /> },
@@ -234,6 +235,11 @@ export default function Navbar() {
               </a>
             </div>
 
+            {/* WhatsApp Contact Button */}
+            <div>
+              <WhatsAppButton variant="navbar" />
+            </div>
+
             {/* Hire Me Gradient Pill Button with Magnetic & Arrow Slide */}
             <div
               ref={hireBtnRef}
@@ -364,6 +370,8 @@ export default function Navbar() {
                   <FaFileAlt size={14} />
                   <span>{t("navbar.resume")}</span>
                 </a>
+
+                <WhatsAppButton variant="navbar" isMobileNavbar={true} />
 
                 <Link
                   to="/contact"

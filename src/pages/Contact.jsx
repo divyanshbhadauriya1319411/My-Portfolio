@@ -12,6 +12,7 @@ import {
   FaExclamationCircle,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -300,7 +301,7 @@ export default function Contact() {
             <span className="text-xs font-bold uppercase tracking-wider text-secondary block transition-colors">
               {t("contact.profNetworks")}
             </span>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center flex-wrap gap-3">
               <a
                 href="https://github.com/divyanshbhadauriya1319411"
                 target="_blank"
@@ -317,6 +318,7 @@ export default function Contact() {
               >
                 <FaLinkedin size={15} /> {t("contact.linkedinProfile")}
               </a>
+              <WhatsAppButton variant="contact" />
             </div>
           </div>
 
