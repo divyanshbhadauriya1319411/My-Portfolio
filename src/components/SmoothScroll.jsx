@@ -1,8 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 import Lenis from "lenis";
 
-export default function SmoothScroll({ children }) {
+function SmoothScroll({ children }) {
   useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -17,7 +21,9 @@ export default function SmoothScroll({ children }) {
     let animationFrameId;
 
     function raf(time) {
-      lenis.raf(time);
+      if (!document.hidden) {
+        lenis.raf(time);
+      }
       animationFrameId = requestAnimationFrame(raf);
     }
 
@@ -27,7 +33,7 @@ export default function SmoothScroll({ children }) {
     window.lenis = lenis;
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
       lenis.destroy();
       delete window.lenis;
     };
@@ -35,3 +41,5 @@ export default function SmoothScroll({ children }) {
 
   return <>{children}</>;
 }
+
+export default memo(SmoothScroll);

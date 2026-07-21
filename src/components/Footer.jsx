@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, memo } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
@@ -41,7 +41,7 @@ const PARTICLES = Array.from({ length: 15 }, (_, i) => ({
   delay: (i % 5) * 0.8,
 }));
 
-export default function Footer() {
+function Footer() {
   const { t } = useTranslation();
   const [isLaunching, setIsLaunching] = useState(false);
   const footerRef = useRef(null);
@@ -50,6 +50,7 @@ export default function Footer() {
 
   // Mouse-reactive radial light effect
   const handleMouseMove = (e) => {
+    if (typeof window !== "undefined" && (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
     if (!footerRef.current || !lightRef.current) return;
     const rect = footerRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -65,6 +66,7 @@ export default function Footer() {
 
   // Magnetic button physics for CTA button
   const handleBtnMouseMove = (e) => {
+    if (typeof window !== "undefined" && (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
     if (!ctaBtnRef.current) return;
     const rect = ctaBtnRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -384,3 +386,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default memo(Footer);

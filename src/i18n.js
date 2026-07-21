@@ -5,7 +5,6 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 
 // We eagerly bundle English as initial/fallback dictionary to prevent zero-state flash
 import enTranslation from './locales/en/translation.json';
-import hiTranslation from './locales/hi/translation.json';
 
 export const SUPPORTED_LANGUAGES = [
   {
@@ -29,7 +28,6 @@ i18n
   .init({
     resources: {
       en: { translation: enTranslation },
-      hi: { translation: hiTranslation },
     },
     supportedLngs: ['en', 'hi'],
     nonExplicitSupportedLngs: true, // e.g. 'en-US' -> 'en', 'hi-IN' -> 'hi'

@@ -340,6 +340,7 @@ function ElegantProjectCard({ proj, index, onOpenDetails }) {
             src={proj.image}
             alt={proj.title}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-65 group-hover:opacity-30 transition-opacity duration-500" />
@@ -424,6 +425,16 @@ function LiveGitHubSection() {
     let isMounted = true;
     async function fetchGitHubData() {
       try {
+        const cachedProfile = sessionStorage.getItem("gh_profile_cache");
+        const cachedRepos = sessionStorage.getItem("gh_repos_cache");
+        if (cachedProfile && cachedRepos) {
+          if (isMounted) {
+            setProfile(JSON.parse(cachedProfile));
+            setRepos(JSON.parse(cachedRepos));
+          }
+          return;
+        }
+
         const [profileRes, reposRes] = await Promise.all([
           fetch("https://api.github.com/users/divyanshbhadauriya1319411"),
           fetch("https://api.github.com/users/divyanshbhadauriya1319411/repos?sort=updated"),
@@ -431,6 +442,10 @@ function LiveGitHubSection() {
         if (profileRes.ok && reposRes.ok) {
           const profileJson = await profileRes.json();
           const reposJson = await reposRes.json();
+          try {
+            sessionStorage.setItem("gh_profile_cache", JSON.stringify(profileJson));
+            sessionStorage.setItem("gh_repos_cache", JSON.stringify(reposJson));
+          } catch (e) {}
           if (isMounted) {
             setProfile(profileJson);
             setRepos(reposJson);
@@ -520,6 +535,8 @@ function LiveGitHubSection() {
             <img
               src={displayProfile.avatar_url}
               alt={displayProfile.name}
+              loading="lazy"
+              decoding="async"
               className="w-16 h-16 rounded-2xl border-2 border-[#2563EB] dark:border-[#38BDF8] shadow-md shrink-0 object-cover"
             />
             <div className="space-y-1 min-w-0">
@@ -741,6 +758,8 @@ function ComprehensiveCaseStudyPage({ caseStudy, onClose }) {
             <img
               src={caseStudy.image}
               alt={caseStudy.title}
+              loading="lazy"
+              decoding="async"
               className="w-full max-h-[300px] object-cover"
             />
           </div>

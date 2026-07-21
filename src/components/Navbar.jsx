@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
@@ -30,7 +30,7 @@ const NAV_ITEMS = [
   { key: "contact",    label: "Contact",    path: "/contact",    icon: <FaEnvelope size={14} /> },
 ];
 
-export default function Navbar() {
+function Navbar() {
   const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -56,6 +56,7 @@ export default function Navbar() {
 
   // Subtle 3D Tilt & Mouse Tracking Glow on Navbar
   const handleNavMouseMove = (e) => {
+    if (typeof window !== "undefined" && (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
     if (!navContainerRef.current || !lightRef.current) return;
     const rect = navContainerRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -96,6 +97,7 @@ export default function Navbar() {
 
   // Magnetic button physics helper
   const handleMagneticMove = (e, ref) => {
+    if (typeof window !== "undefined" && (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -389,3 +391,5 @@ export default function Navbar() {
     </>
   );
 }
+
+export default memo(Navbar);

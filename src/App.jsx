@@ -8,10 +8,10 @@ import ScrollProgressBar from "./components/ScrollProgressBar";
 import Background from "./components/Background";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import IntroSequence from "./components/IntroSequence";
 import "./i18n";
 
-/* ── Lazy Loaded Route Pages ─────────────────────────────────── */
+/* ── Lazy Loaded Components & Route Pages ────────────────────── */
+const IntroSequence = lazy(() => import("./components/IntroSequence"));
 const Home        = lazy(() => import("./pages/Home"));
 const About       = lazy(() => import("./pages/About"));
 const Skills      = lazy(() => import("./pages/Skills"));
@@ -89,7 +89,9 @@ export default function App() {
             {/* Fullscreen Intro Sequence Overlay (Plays only once per session) */}
             <AnimatePresence>
               {showIntro && (
-                <IntroSequence onComplete={() => setShowIntro(false)} />
+                <Suspense fallback={null}>
+                  <IntroSequence onComplete={() => setShowIntro(false)} />
+                </Suspense>
               )}
             </AnimatePresence>
 

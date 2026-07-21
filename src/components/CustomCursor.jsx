@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
-export default function CustomCursor() {
+function CustomCursor() {
   const [isHovered, setIsHovered] = useState(false);
   const [isLinkHovered, setIsLinkHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +20,8 @@ export default function CustomCursor() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(pointer: fine)");
-    setIsDesktop(mediaQuery.matches);
+    const isFine = mediaQuery.matches && !window.matchMedia("(pointer: coarse)").matches;
+    setIsDesktop(isFine);
 
     const handleMediaChange = (e) => setIsDesktop(e.matches);
     if (mediaQuery.addEventListener) {
@@ -29,10 +30,20 @@ export default function CustomCursor() {
       mediaQuery.addListener(handleMediaChange);
     }
 
+    if (!isFine) {
+      return () => {
+        if (mediaQuery.removeEventListener) {
+          mediaQuery.removeEventListener("change", handleMediaChange);
+        } else {
+          mediaQuery.removeListener(handleMediaChange);
+        }
+      };
+    }
+
     const handleMouseMove = (e) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      setIsVisible((prev) => (prev ? prev : true));
     };
 
     const handleMouseOver = (e) => {
@@ -74,7 +85,7 @@ export default function CustomCursor() {
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
     };
-  }, [isVisible, cursorX, cursorY]);
+  }, []);
 
   if (!isDesktop || !isVisible) return null;
 
@@ -120,3 +131,5 @@ export default function CustomCursor() {
     </>
   );
 }
+
+export default memo(CustomCursor);

@@ -10,9 +10,11 @@ import {
   FaPaperPlane,
   FaSpinner,
   FaExclamationCircle,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import WhatsAppButton from "../components/WhatsAppButton";
+import LocationMap from "../components/LocationMap";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -462,21 +464,8 @@ export default function Contact() {
 
       </div>
 
-      {/* Google Map Section */}
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold font-heading text-primary transition-colors">
-          {t("contact.baseLocTitle")}
-        </h2>
-        <div className="rounded-3xl overflow-hidden border border-default h-72 sm:h-96 w-full bg-card shadow-xl transition-all duration-500">
-          <iframe
-            title="Noida, Uttar Pradesh Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.2089851!3d28.5272803!2m3!1f0!2f0!3f0!3m2!1f1024!2f1024!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
-            className="w-full h-full border-none filter grayscale dark:invert contrast-125 opacity-90 transition-all"
-            loading="lazy"
-            allowFullScreen
-          />
-        </div>
-      </div>
+      {/* Leaflet + OpenStreetMap Location Component */}
+      <LocationMap />
     </div>
   );
 }

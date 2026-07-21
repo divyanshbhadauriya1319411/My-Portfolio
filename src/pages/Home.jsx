@@ -17,7 +17,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import profileImg from "../assets/profile.jpg";
+import profileImg from "../assets/profile.webp";
 
 const HERO_ROLES = [
   "React Developer",
@@ -151,6 +151,7 @@ export default function Home() {
 
   // Mouse tracking radial glow across entire Hero section
   const handleHeroMouseMove = (e) => {
+    if (typeof window !== "undefined" && (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
     if (!heroSectionRef.current || !heroLightRef.current) return;
     const rect = heroSectionRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -166,6 +167,7 @@ export default function Home() {
 
   // 3D Mouse Tilt and local depth glow for Profile Photo Card
   const handlePhotoMouseMove = (e) => {
+    if (typeof window !== "undefined" && (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
     if (!photoCardRef.current || !photoGlowRef.current) return;
     const rect = photoCardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -205,12 +207,13 @@ export default function Home() {
   };
 
   // Magnetic Button Helper
-  const handleMagneticMove = (e) => {
-    const btn = e.currentTarget;
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.3, ease: "power2.out" });
+  const handleMagneticMove = (e, ref) => {
+    if (typeof window !== "undefined" && (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    if (!ref.current) return;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const x = e.clientX - left - width / 2;
+    const y = e.clientY - top - height / 2;
+    gsap.to(ref.current, { x: x * 0.3, y: y * 0.3, duration: 0.3, ease: "power2.out" });
   };
 
   const handleMagneticLeave = (e) => {
@@ -248,8 +251,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-noise opacity-60 pointer-events-none" />
 
         {/* Floating Blurred Orbs */}
-        <div className="absolute top-16 left-1/4 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-[#2563EB]/15 via-[#38BDF8]/10 to-indigo-500/15 blur-[150px] pointer-events-none animate-pulse" />
-        <div className="absolute bottom-10 right-1/4 w-[480px] h-[480px] rounded-full bg-gradient-to-br from-[#38BDF8]/12 to-indigo-600/12 blur-[140px] pointer-events-none" />
+        <div className="absolute top-16 left-1/4 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-[#2563EB]/15 via-[#38BDF8]/10 to-indigo-500/15 blur-[90px] pointer-events-none will-change-transform" />
+        <div className="absolute bottom-10 right-1/4 w-[480px] h-[480px] rounded-full bg-gradient-to-br from-[#38BDF8]/12 to-indigo-600/12 blur-[80px] pointer-events-none will-change-transform" />
 
         {/* Mouse-following light dot */}
         <div
@@ -315,6 +318,8 @@ export default function Home() {
                   src={profileImg}
                   alt="Divyansh Bhadauriya"
                   loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-auto max-h-[360px] sm:max-h-[420px] object-cover object-top block transition-transform duration-700 group-hover:scale-105 img-responsive"
                 />
               </div>

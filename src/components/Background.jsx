@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, memo } from "react";
 import gsap from "gsap";
 
-export default function Background() {
+function Background() {
   const orb1Ref = useRef(null);
   const orb2Ref = useRef(null);
   const orb3Ref = useRef(null);
@@ -9,40 +9,56 @@ export default function Background() {
 
   // Floating parallax animation for blurred gradient circles
   useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const ctx = gsap.context(() => {
       gsap.to(orb1Ref.current, {
-        x: "20vw",
-        y: "15vh",
-        duration: 14,
+        x: "15vw",
+        y: "12vh",
+        duration: 16,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
       });
 
       gsap.to(orb2Ref.current, {
-        x: "-25vw",
-        y: "-20vh",
-        duration: 18,
+        x: "-18vw",
+        y: "-15vh",
+        duration: 20,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
       });
 
       gsap.to(orb3Ref.current, {
-        x: "15vw",
-        y: "-25vh",
-        duration: 22,
+        x: "12vw",
+        y: "-18vh",
+        duration: 24,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
       });
     });
 
-    return () => ctx.revert();
+    const handleVisibility = () => {
+      if (document.hidden) {
+        ctx.pause();
+      } else {
+        ctx.resume();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibility);
+      ctx.revert();
+    };
   }, []);
 
-  // Mouse movement tracking radial glow
+  // Mouse movement tracking radial glow (skipped on touch devices and low performance)
   useEffect(() => {
+    if (typeof window !== "undefined" && (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+
     const handleMouseMove = (e) => {
       if (!lightRef.current) return;
       gsap.to(lightRef.current, {
@@ -74,23 +90,25 @@ export default function Background() {
       {/* 3. Floating Blurred Circles / Orbs */}
       <div
         ref={orb1Ref}
-        className="absolute top-1/4 left-1/4 w-[420px] h-[420px] rounded-full bg-gradient-to-tr from-[#2563EB]/15 to-[#38BDF8]/15 dark:from-[#2563EB]/18 dark:to-[#38BDF8]/18 blur-[110px]"
+        className="absolute top-1/4 left-1/4 w-[420px] h-[420px] rounded-full bg-gradient-to-tr from-[#2563EB]/15 to-[#38BDF8]/15 dark:from-[#2563EB]/18 dark:to-[#38BDF8]/18 blur-[70px] will-change-transform"
       />
       <div
         ref={orb2Ref}
-        className="absolute bottom-1/3 right-1/4 w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-[#38BDF8]/12 to-[#818CF8]/12 dark:from-[#38BDF8]/15 dark:to-[#818CF8]/15 blur-[130px]"
+        className="absolute bottom-1/3 right-1/4 w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-[#38BDF8]/12 to-[#818CF8]/12 dark:from-[#38BDF8]/15 dark:to-[#818CF8]/15 blur-[80px] will-change-transform"
       />
       <div
         ref={orb3Ref}
-        className="absolute top-2/3 left-1/3 w-[360px] h-[360px] rounded-full bg-gradient-to-br from-[#2563EB]/10 to-indigo-500/10 dark:from-[#2563EB]/14 dark:to-indigo-500/14 blur-[100px]"
+        className="absolute top-2/3 left-1/3 w-[360px] h-[360px] rounded-full bg-gradient-to-br from-[#2563EB]/10 to-indigo-500/10 dark:from-[#2563EB]/14 dark:to-indigo-500/14 blur-[65px] will-change-transform"
       />
 
       {/* 4. Mouse Movement Tracking Light Glow */}
       <div
         ref={lightRef}
         style={{ transform: "translate(-50%, -50%)" }}
-        className="absolute top-0 left-0 w-[450px] h-[450px] rounded-full bg-[#2563EB]/10 dark:bg-[#38BDF8]/12 blur-[120px] opacity-70 transition-opacity"
+        className="absolute top-0 left-0 w-[450px] h-[450px] rounded-full bg-[#2563EB]/10 dark:bg-[#38BDF8]/12 blur-[80px] opacity-70 transition-opacity will-change-transform"
       />
     </div>
   );
 }
+
+export default memo(Background);

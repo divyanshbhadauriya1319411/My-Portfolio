@@ -30,7 +30,7 @@ import {
   SiRender,
 } from "react-icons/si";
 import { useTranslation } from "react-i18next";
-import profileImg from "../assets/profile.jpg";
+import profileImg from "../assets/profile.webp";
 
 /* ── Animated Number Counter Component ───────────────────────────── */
 function CountUpStatistic({ target, suffix = "", label, icon }) {
@@ -40,24 +40,33 @@ function CountUpStatistic({ target, suffix = "", label, icon }) {
 
   useEffect(() => {
     if (!isInView) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCount(target);
+      return;
+    }
 
-    let start = 0;
+    let startTimestamp = null;
     const duration = 1800; // 1.8 seconds
-    const intervalTime = 25;
-    const totalSteps = duration / intervalTime;
-    const increment = target / totalSteps;
+    let animationFrameId;
 
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
+    const step = (timestamp) => {
+      if (document.hidden) {
+        animationFrameId = requestAnimationFrame(step);
+        return;
       }
-    }, intervalTime);
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * target));
 
-    return () => clearInterval(timer);
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationFrameId);
   }, [isInView, target]);
 
   return (
@@ -228,6 +237,8 @@ export default function About() {
               <img
                 src={profileImg}
                 alt="Divyansh Bhadauriya"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover block group-hover:scale-105 transition-transform duration-700 ease-out"
               />
 
