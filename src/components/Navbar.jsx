@@ -222,13 +222,16 @@ export default function Navbar() {
               onMouseMove={(e) => handleMagneticMove(e, resumeBtnRef)}
               onMouseLeave={() => handleMagneticLeave(resumeBtnRef)}
             >
-              <Link
-                to="/resume"
+              <a
+                href="/resume.pdf"
+                download="Divyansh_Bhadauriya_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-3.5 xl:px-4 py-2 rounded-xl border border-zinc-300 dark:border-white/20 text-zinc-700 dark:text-zinc-200 text-xs font-bold hover:bg-[#2563EB] hover:border-[#2563EB] hover:text-white dark:hover:bg-[#38BDF8] dark:hover:border-[#38BDF8] dark:hover:text-zinc-900 transition-all duration-200 shadow-xs hover:shadow-md hover:shadow-blue-500/20 interactive-btn"
               >
                 <FaFileAlt size={11} className="group-hover:-translate-y-0.5 transition-transform" />
                 <span>{t("navbar.resume")}</span>
-              </Link>
+              </a>
             </div>
 
             {/* Hire Me Gradient Pill Button with Magnetic & Arrow Slide */}
@@ -350,14 +353,17 @@ export default function Navbar() {
                 {/* Mobile Language Switcher */}
                 <LanguageSwitcher isMobile={true} />
 
-                <Link
-                  to="/resume"
+                <a
+                  href="/resume.pdf"
+                  download="Divyansh_Bhadauriya_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center gap-2.5 w-full py-3 rounded-xl border border-zinc-300 dark:border-white/20 text-zinc-800 dark:text-white font-bold text-sm hover:bg-zinc-100 dark:hover:bg-white/10 transition-all"
                 >
                   <FaFileAlt size={14} />
                   <span>{t("navbar.resume")}</span>
-                </Link>
+                </a>
 
                 <Link
                   to="/contact"

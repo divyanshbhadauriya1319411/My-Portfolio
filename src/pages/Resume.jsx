@@ -25,7 +25,7 @@ export default function Resume() {
 
   const containerRef = useRef(null);
   const iframeRef = useRef(null);
-  const pdfUrl = "/resume/Divyansh_Bhadauriya_Resume.pdf";
+  const pdfUrl = "/resume.pdf";
 
   // ── SEO & Title management ──────────────────────────────────────────────
   useEffect(() => {
@@ -208,6 +208,8 @@ export default function Resume() {
               <a
                 href={pdfUrl}
                 download="Divyansh_Bhadauriya_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-zinc-100 dark:bg-white/10 hover:bg-[#2563EB] hover:text-white dark:hover:bg-[#38BDF8] dark:hover:text-zinc-900 text-zinc-800 dark:text-zinc-200 text-xs sm:text-sm font-bold transition-all shadow-xs"
               >
                 <FaDownload size={12} />
@@ -264,6 +266,8 @@ export default function Resume() {
                 <a
                   href={pdfUrl}
                   download="Divyansh_Bhadauriya_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#2563EB] via-blue-600 to-[#38BDF8] text-white font-extrabold text-sm shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all active:scale-95"
                 >
                   <FaDownload size={14} />
@@ -299,6 +303,8 @@ export default function Resume() {
         <a
           href={pdfUrl}
           download="Divyansh_Bhadauriya_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group flex items-center gap-3 px-6 py-4 rounded-full bg-gradient-to-r from-[#2563EB] via-blue-600 to-[#38BDF8] text-white font-extrabold text-sm shadow-[0_8px_30px_rgba(37,99,235,0.45)] hover:shadow-[0_8px_35px_rgba(56,189,248,0.75)] hover:-translate-y-1 active:scale-95 transition-all duration-300 border border-white/20 backdrop-blur-md"
         >
           <FaDownload className="text-base group-hover:animate-bounce" />

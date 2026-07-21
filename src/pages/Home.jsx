@@ -452,6 +452,8 @@ export default function Home() {
                 <a
                   href="/resume.pdf"
                   download="Divyansh_Bhadauriya_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onMouseMove={handleMagneticMove}
                   onMouseLeave={handleMagneticLeave}
                   className="group flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl border border-default bg-card/80 hover:bg-slate-100 dark:hover:bg-white/10 text-primary font-bold text-sm sm:text-base shadow-sm hover:shadow-md transition-all interactive-btn backdrop-blur-md touch-target w-full sm:w-auto"
@@ -741,7 +743,9 @@ export default function Home() {
             </Link>
             <a
               href="/resume.pdf"
-              download
+              download="Divyansh_Bhadauriya_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 rounded-2xl bg-blue-900/40 hover:bg-blue-900/60 text-white font-extrabold text-sm sm:text-base border border-white/25 transition-all hover:scale-105 touch-target w-full sm:w-auto"
             >
               {t("home.downloadResume")}

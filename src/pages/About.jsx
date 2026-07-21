@@ -275,7 +275,9 @@ export default function About() {
                 </span>
                 <a
                   href="/resume.pdf"
-                  download
+                  download="Divyansh_Bhadauriya_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2563EB] dark:text-[#38BDF8] hover:underline"
                 >
                   <FaDownload size={11} /> {t("about.resumePdf", "Resume PDF")}
@@ -446,7 +448,9 @@ export default function About() {
           whileHover={{ scale: 1.03, y: -2 }}
           whileTap={{ scale: 0.98 }}
           href="/resume.pdf"
-          download
+          download="Divyansh_Bhadauriya_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-4.5 rounded-2xl bg-gradient-to-r from-[#2563EB] to-[#06B6D4] text-white font-bold text-base shadow-xl shadow-blue-500/25 hover:shadow-[0_0_35px_rgba(56,189,248,0.6)] transition-all duration-300 w-full sm:w-auto touch-target overflow-hidden"
         >
           <span className="relative z-10">{t("about.downloadResume", "Download Resume")}</span>
