@@ -20,7 +20,7 @@ router = APIRouter()
     response_model=StatusResponse,
     status_code=status.HTTP_200_OK,
     summary="Root status check",
-    description="Returns API running status."
+    description="Returns API running status.",
 )
 async def root() -> StatusResponse:
     """Root endpoint verifying that the FastAPI service is running."""
@@ -32,14 +32,16 @@ async def root() -> StatusResponse:
     response_model=HealthResponse,
     status_code=status.HTTP_200_OK,
     summary="Health check",
-    description="Returns service health check success confirmation."
+    description="Returns service health check success confirmation.",
 )
 async def health_check() -> HealthResponse:
     """Health check endpoint for monitoring uptime checkers."""
     return HealthResponse(success=True)
 
 
-async def _process_contact_submission(request: Request, contact: ContactRequest) -> JSONResponse:
+async def _process_contact_submission(
+    request: Request, contact: ContactRequest
+) -> JSONResponse:
     """
     Core handler for processing contact form submissions:
     1. Extracts true client IP address and User-Agent.
@@ -50,8 +52,19 @@ async def _process_contact_submission(request: Request, contact: ContactRequest)
     client_ip = get_client_ip(request)
     user_agent = get_user_agent(request)
 
-    logger.info("Incoming request: POST {} from IP: {} | User-Agent: {}", request.url.path, client_ip, user_agent)
-    logger.info("Request body: name={}, email={}, subject={}, has_recaptcha={}", contact.name, contact.email, contact.subject, bool(contact.recaptchaToken))
+    logger.info(
+        "Incoming request: POST {} from IP: {} | User-Agent: {}",
+        request.url.path,
+        client_ip,
+        user_agent,
+    )
+    logger.info(
+        "Request body: name={}, email={}, subject={}, has_recaptcha={}",
+        contact.name,
+        contact.email,
+        contact.subject,
+        bool(contact.recaptchaToken),
+    )
     logger.info("Validation: passed for email={}", contact.email)
 
     # 1. Verify Google reCAPTCHA token if included by frontend (raises RecaptchaVerificationError if verification fails)
@@ -61,24 +74,16 @@ async def _process_contact_submission(request: Request, contact: ContactRequest)
 
     # 2. Send HTML contact email via Resend
     await send_contact_email(
-        contact=contact,
-        client_ip=client_ip,
-        user_agent=user_agent
+        contact=contact, client_ip=client_ip, user_agent=user_agent
     )
 
     # 3. Log success and return exact structured JSON response
-    return_json = {
-        "success": True,
-        "message": "Email sent successfully"
-    }
+    return_json = {"success": True, "message": "Email sent successfully"}
     logger.info("Email success: Contact notification sent for {}", contact.email)
     logger.info("Status code: 200 OK")
     logger.info("Return JSON: {}", return_json)
     log_request_success(client_ip, contact.email)
-    return JSONResponse(
-        status_code=status.HTTP_200_OK,
-        content=return_json
-    )
+    return JSONResponse(status_code=status.HTTP_200_OK, content=return_json)
 
 
 @router.post(
@@ -86,10 +91,12 @@ async def _process_contact_submission(request: Request, contact: ContactRequest)
     response_model=ContactResponse,
     status_code=status.HTTP_200_OK,
     summary="Submit contact form (Primary API endpoint)",
-    description="Validates contact form inputs and sends notification email via Resend API."
+    description="Validates contact form inputs and sends notification email via Resend API.",
 )
 @limiter.limit("5/minute")
-async def submit_contact_form(request: Request, contact: ContactRequest) -> JSONResponse:
+async def submit_contact_form(
+    request: Request, contact: ContactRequest
+) -> JSONResponse:
     """
     Primary contact form endpoint (`POST /api/contact`) with strict rate limiting of 5 requests per minute per IP.
     """
@@ -101,10 +108,12 @@ async def submit_contact_form(request: Request, contact: ContactRequest) -> JSON
     response_model=ContactResponse,
     status_code=status.HTTP_200_OK,
     summary="Submit contact form (Root alias)",
-    description="Alias endpoint directing to the same validation and email delivery service."
+    description="Alias endpoint directing to the same validation and email delivery service.",
 )
 @limiter.limit("5/minute")
-async def submit_contact_form_alias(request: Request, contact: ContactRequest) -> JSONResponse:
+async def submit_contact_form_alias(
+    request: Request, contact: ContactRequest
+) -> JSONResponse:
     """
     Root alias (`POST /contact`) backward compatibility endpoint with rate limiting.
     """

@@ -33,7 +33,7 @@ def create_application() -> FastAPI:
         version="1.0.0",
         description="Production-ready FastAPI backend for Portfolio Website with Resend email notification and Google reCAPTCHA v3 verification.",
         docs_url="/docs",
-        redoc_url="/redoc"
+        redoc_url="/redoc",
     )
 
     # Attach SlowAPI Rate Limiter to app state

@@ -15,9 +15,7 @@ resend.api_key = settings.RESEND_API_KEY
 
 
 async def send_contact_email(
-    contact: ContactRequest,
-    client_ip: str = "Unknown",
-    user_agent: str = "Unknown"
+    contact: ContactRequest, client_ip: str = "Unknown", user_agent: str = "Unknown"
 ) -> Dict[str, Any]:
     """
     Sends a professional HTML email notification via Resend API using non-blocking thread execution.
@@ -184,11 +182,19 @@ async def send_contact_email(
     }
 
     try:
-        logger.info("Resend request initiated: from={}, to={}, subject={}, reply_to={}", settings.FROM_EMAIL, settings.TO_EMAIL, params["subject"], clean_email)
+        logger.info(
+            "Resend request initiated: from={}, to={}, subject={}, reply_to={}",
+            settings.FROM_EMAIL,
+            settings.TO_EMAIL,
+            params["subject"],
+            clean_email,
+        )
         # Execute Resend SDK call synchronously in a dedicated thread
         response = await asyncio.to_thread(resend.Emails.send, params)
         logger.info("Resend response received: {}", response)
-        logger.info("Resend API successfully delivered contact notification: {}", response)
+        logger.info(
+            "Resend API successfully delivered contact notification: {}", response
+        )
         return response
     except Exception as exc:
         logger.exception("Exceptions & Stack trace during Resend send: {}", exc)

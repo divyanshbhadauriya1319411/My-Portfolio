@@ -1,5 +1,4 @@
 from unittest.mock import AsyncMock, patch
-import pytest
 from fastapi.testclient import TestClient
 
 from app.exceptions import EmailSendError, RecaptchaVerificationError
@@ -28,7 +27,7 @@ def test_contact_submission_validation_failure():
         "name": "   ",  # Whitespace only should fail
         "email": "invalid-email",
         "subject": "",
-        "message": ""
+        "message": "",
     }
     response = client.post("/api/contact", json=payload)
     assert response.status_code == 422
@@ -41,14 +40,16 @@ def test_contact_submission_validation_failure():
 @patch("app.routes.verify_recaptcha_token", new_callable=AsyncMock)
 def test_contact_submission_recaptcha_failure(mock_verify):
     """Verify that failed reCAPTCHA verification returns HTTP 403 structured JSON response when token provided."""
-    mock_verify.side_effect = RecaptchaVerificationError("Google reCAPTCHA score too low.")
+    mock_verify.side_effect = RecaptchaVerificationError(
+        "Google reCAPTCHA score too low."
+    )
 
     payload = {
         "name": "John Doe",
         "email": "john@example.com",
         "subject": "Inquiry",
         "message": "Hello there!",
-        "recaptchaToken": "fake-token"
+        "recaptchaToken": "fake-token",
     }
     response = client.post("/api/contact", json=payload)
     assert response.status_code == 403
@@ -67,7 +68,7 @@ def test_contact_submission_success_without_token(mock_send):
         "name": "Jane Doe",
         "email": "jane@example.com",
         "subject": "Project Collaboration",
-        "message": "Hi, I would like to discuss a project with you!"
+        "message": "Hi, I would like to discuss a project with you!",
     }
     response = client.post("/api/contact", json=payload)
     assert response.status_code == 200
@@ -88,7 +89,7 @@ def test_contact_submission_resend_error(mock_verify, mock_send):
         "name": "Jane Doe",
         "email": "jane@example.com",
         "subject": "Project Collaboration",
-        "message": "Hi, I would like to discuss a project with you!"
+        "message": "Hi, I would like to discuss a project with you!",
     }
     response = client.post("/api/contact", json=payload)
     assert response.status_code == 500
@@ -106,7 +107,7 @@ def test_contact_submission_exact_requirement_payload(mock_send):
         "name": "Divyansh",
         "email": "test@gmail.com",
         "subject": "Testing",
-        "message": "Hello"
+        "message": "Hello",
     }
     response = client.post("/api/contact", json=payload)
     assert response.status_code == 200

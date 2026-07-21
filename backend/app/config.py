@@ -9,37 +9,45 @@ class Settings(BaseSettings):
     Application configuration values read securely using python-dotenv via Pydantic BaseSettings.
     Ensures zero hardcoded secrets.
     """
+
     # Resend Email Configuration
-    RESEND_API_KEY: str = Field(default="", description="Resend API Key for sending emails")
+    RESEND_API_KEY: str = Field(
+        default="", description="Resend API Key for sending emails"
+    )
     FROM_EMAIL: str = Field(
         default="onboarding@resend.dev",
-        description="Verified sender email address in Resend dashboard"
+        description="Verified sender email address in Resend dashboard",
     )
     TO_EMAIL: str = Field(
         default="",
-        description="Destination email address where contact submissions are received"
+        description="Destination email address where contact submissions are received",
     )
 
     # Google reCAPTCHA Configuration
     RECAPTCHA_SECRET_KEY: str = Field(
         default="",
-        description="Google reCAPTCHA Secret Key for verifying token authenticity"
+        description="Google reCAPTCHA Secret Key for verifying token authenticity",
     )
     RECAPTCHA_MIN_SCORE: float = Field(
         default=0.5,
-        description="Minimum score threshold required for reCAPTCHA v3 (0.0 to 1.0)"
+        description="Minimum score threshold required for reCAPTCHA v3 (0.0 to 1.0)",
     )
 
     # CORS Configuration
     ALLOWED_ORIGINS: Union[List[str], str] = Field(
-        default=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000", "https://divyanshbhadauriya-portfolio.vercel.app"],
-        description="List of allowed CORS frontend origins"
+        default=[
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            "http://localhost:3000",
+            "https://divyanshbhadauriya-portfolio.vercel.app",
+        ],
+        description="List of allowed CORS frontend origins",
     )
 
     # Environment setting
     ENVIRONMENT: str = Field(
         default="development",
-        description="Deployment environment (development, staging, production)"
+        description="Deployment environment (development, staging, production)",
     )
 
     @classmethod
@@ -50,6 +58,7 @@ class Settings(BaseSettings):
         if field_name == "ALLOWED_ORIGINS" and isinstance(value, str):
             try:
                 import json
+
                 return json.loads(value)
             except Exception:
                 return [origin.strip() for origin in value.split(",") if origin.strip()]
@@ -66,12 +75,15 @@ class Settings(BaseSettings):
             return [origin.strip() for origin in v.split(",") if origin.strip()]
         if isinstance(v, list):
             return [str(origin).strip() for origin in v if str(origin).strip()]
-        return ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000", "https://divyanshbhadauriya-portfolio.vercel.app"]
+        return [
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            "http://localhost:3000",
+            "https://divyanshbhadauriya-portfolio.vercel.app",
+        ]
 
     model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        extra="ignore"
+        env_file=".env", env_file_encoding="utf-8", extra="ignore"
     )
 
 
