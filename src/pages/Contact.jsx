@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import WhatsAppButton from "../components/WhatsAppButton";
-import LocationMap from "../components/LocationMap";
+import MapSection from "../components/MapSection";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -464,8 +464,7 @@ export default function Contact() {
 
       </div>
 
-      {/* Leaflet + OpenStreetMap Location Component */}
-      <LocationMap />
+      <MapSection />
     </div>
   );
 }
